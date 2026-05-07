@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 6.30 (Windows - x86)">
+  <section name="config">
+    <options closefiles="1" openmode="2" name="C2D Module"/>
+    <comment>Canvas2D</comment>
+  </section>
+  <section name="data">
+    <explorer view="" pattern="0"/>
+    <log show="1"/>
+    <lastopen date="2026-04-17 23:07" user="Peace" host="WIN-O31S8MK7MBE"/>
+  </section>
+  <section name="files">
+    <file name="C2D_Module.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="77e2041f4a2cabafc847c20cfd4333ba"/>
+    </file>
+    <file name="C2D_Defaults.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="44d345a01f139b7892ee93b546f1eb4b"/>
+    </file>
+    <file name="C2D_Macros.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="5ffb81220eee9092de7a4e10bb247004"/>
+    </file>
+    <file name="C2D_Enums.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="ada5481c27b6e914f6eb0bf983e569cb"/>
+    </file>
+    <file name="i_Gui_Module.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="024c11359f324b6330ac4bb3d87253c4"/>
+    </file>
+    <file name="C2D_Private.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="50b28b7b34086da4ea2db07178029a63"/>
+    </file>
+    <file name="i_C2D_Anim.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="3" panelstate=""/>
+      <fingerprint md5="8f36ad62a80605b12d868650cdc55bc0"/>
+    </file>
+    <file name="i_C2D_Ball3D.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="14" panelstate=""/>
+      <fingerprint md5="00ed096e2c815c113ae3286858a8c4df"/>
+    </file>
+    <file name="i_C2D_Bitmap.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="4" panelstate=""/>
+      <fingerprint md5="bfa72029f0ba070353a705f1d96a0a22"/>
+    </file>
+    <file name="i_C2D_Bounce.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="dc4cb26c338c72bcac52b882d0e6e973"/>
+    </file>
+    <file name="i_C2D_Brush.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="15" panelstate=""/>
+      <fingerprint md5="2da90f17b50402a1ff9e835626b6f917"/>
+    </file>
+    <file name="i_C2D_Buffer.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="5" panelstate=""/>
+      <fingerprint md5="87a43418d7914f4bc235370efb2ff5d6"/>
+    </file>
+    <file name="i_C2D_Checker.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="49a0047d8927572435fa51d94b16e9ab"/>
+    </file>
+    <file name="i_C2D_Copper.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="6" panelstate=""/>
+      <fingerprint md5="080c6a0cfc8a789c5c1bbd1311a3259e"/>
+    </file>
+    <file name="i_C2D_File.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="59221a4c5526b14dc32c8658ecc34463"/>
+    </file>
+    <file name="i_C2D_FlatBar.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="7" panelstate=""/>
+      <fingerprint md5="127ea3aeee6ac6789c86e8f85c6ef839"/>
+    </file>
+    <file name="i_C2D_Font.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="303c6f868262033c5d46f30614567c6c"/>
+    </file>
+    <file name="i_C2D_FontRaw.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="c34f9f53cfe9f33cc53b49af3958990e"/>
+    </file>
+    <file name="i_C2D_Gdiplus.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="64cf38c93d5b77f75b357fe77830372f"/>
+    </file>
+    <file name="i_C2D_Guru.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="b554264afa9e59098c25421e36bd28a6"/>
+    </file>
+    <file name="i_C2D_Line3D.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="fc2cf24ee935e60ab86aba503b102119"/>
+    </file>
+    <file name="i_C2D_MoveText.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="ee63967787fa385d8578c3c3457c997f"/>
+    </file>
+    <file name="i_C2D_NetWork.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="4fdb0324581ce815fbf1f0b9d2ac8f0b"/>
+    </file>
+    <file name="i_C2D_PageText.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="8" panelstate=""/>
+      <fingerprint md5="87bd8cc04d957c4e7d8fed56e5f230fd"/>
+    </file>
+    <file name="i_C2D_Pixel3D.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="c1eab8f4b8bf4c6a2903d94cadeb2bcf"/>
+    </file>
+    <file name="i_C2D_Poly3D.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="13" panelstate=""/>
+      <fingerprint md5="4696fbe50e3317b8c00c9f7326c77d7a"/>
+    </file>
+    <file name="i_C2D_RotoZoom.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="10" panelstate=""/>
+      <fingerprint md5="93ec21962b8c6a5a05c54afb4a7b8672"/>
+    </file>
+    <file name="i_C2D_ScreenShot.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="1e0a07b27035b54e897c16eb86e93918"/>
+    </file>
+    <file name="i_C2D_ScrollText.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="66d92a5f297bc427b978f2f8dee3cbc3"/>
+    </file>
+    <file name="i_C2D_Stars2D.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="12" panelstate=""/>
+      <fingerprint md5="5c61ba125cedfa40168acb80e170dd86"/>
+    </file>
+    <file name="i_C2D_Stars3D.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="711535a5629d130e476e7c0ec47c1a64"/>
+    </file>
+    <file name="i_C2D_StarsR3D.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="2c6c9382c0a3f10b5b835b69ef52cc94"/>
+    </file>
+    <file name="i_C2D_StarsZ3D.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="b80aee9c2de149b2dd9d84486f249ef4"/>
+    </file>
+    <file name="i_C2D_SysFont.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="8e1fcf85a3277fe55a8b3e29765d9160"/>
+    </file>
+    <file name="i_C2D_Text.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="11" panelstate=""/>
+      <fingerprint md5="24528c582daa3747e598001cff7c34d1"/>
+    </file>
+    <file name="i_C2D_Twister.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="cce8052dcea25b00541b8a6d10b57ded"/>
+    </file>
+    <file name="i_XUnPack_Module.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="3220d474ae281126256f98b9eb84f85d"/>
+    </file>
+    <file name="minizip_include.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="7acaa0105795aaefe710e0e9a5d3277e"/>
+    </file>
+    <file name="C2D_Types.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="70a6740ae49f9d57b08fd757f9268e95"/>
+    </file>
+    <file name="i_C2D_Menu.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="a0dfa59169a943d5df5c45e35543af15"/>
+    </file>
+    <file name="i_C2D_Splatter.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="9" panelstate=""/>
+      <fingerprint md5="b40fd23fb33e17355b855011e8e773e3"/>
+    </file>
+    <file name="i_Gui_Types.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="6797994306b5212f8567bbe55b1b0e05"/>
+    </file>
+    <file name="i_IFF_Module.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="6943499706f6e0cc1cbcbfbf1eb472c5"/>
+    </file>
+    <file name="i_XMusic_Module.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="e88255136f09cab0ccfb99372076ee01"/>
+    </file>
+    <file name="i_XMusic_Types.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="5ddf4feea25607e465543cd9a7bfcd5c"/>
+    </file>
+    <file name="i_XUnPack_Types.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate=""/>
+      <fingerprint md5="f1971683339ce51f0bdad5ce0d1c503d"/>
+    </file>
+  </section>
+  <section name="targets">
+    <target name="Standard-Ziel" enabled="1" default="1">
+      <inputfile value=""/>
+      <outputfile value=""/>
+      <options debug="1" optimizer="0"/>
+      <temporaryexe value="source"/>
+    </target>
+  </section>
+</project>
