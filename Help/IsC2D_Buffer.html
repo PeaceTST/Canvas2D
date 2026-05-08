@@ -1,0 +1,72 @@
+<table style="border-collapse:collapse;width:98%;font-family:Courier New;font-size:9pt;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_Buffer = 1</th><th style="width:55%;">Direkt-Zugriff auf Canvas-Grafikspeicher</th>
+</tr>
+
+<tr>
+<td>BufferBackDraw()</td><td>Kopiert den internen Zwischenspeicher direkt in den Canvas-Grafikspeicher. Transparenz wird nicht unterstützt.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BufferBackGrab()</td><td>Kopiert den Canvas-Grafikspeicher innerhalb von StartDrawing() / StopDrawing() in einen internen Zwischenspeicher.</td>
+</tr>
+
+<tr>
+<td>BufferClear()</td><td>Schnelles löschen des Canvas-Grafikspeicher mit der Farbe Schwarz.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BufferCloneY(y0, y1, h)</td><td>Kopiert einen vertikalen Bereich von y0 nach y1 in der Pixel-Höhe h.</td>
+</tr>
+
+<tr>
+<td>BufferFrontDraw(y=0, h=0)</td><td>Schnelles kopieren des internen Zwischenspeicher direkt in den Canvas-Grafikspeicher. Der Farbwert #Black wird nicht gezeichnet (Transparent). Die Parameter y = vertikale Startposition sowie h = Höhe des einzufügenden Zwischenspeicher dienen zur Ressourcen-Schonung.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BufferFrontGrab()</td><td>Kopiert den Canvas-Grafikspeicher innerhalb von StartDrawing() / StopDrawing() in einen internen Zwischenspeicher. Der Farbwert #Black ist Transparent.</td>
+</tr>
+
+<tr>
+<td>BufferMirror(x, y, w, h, Mask=%11111111)</td><td>Spiegelt einen Canvas-Bereich. Über Bit-Veränderung von Mask kann die Höhe und Zeilen-Spiegelung eingestellt werden.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BufferSinDraw(y=0)</td><td>Transparentes zeichnen des internen Sinus-Speicher. Mittels dem Parameter y kann eine Darstellung beschleunigt werden, da hierbei ausgehend vom vertikalen Mittelpunkt die Zeichenopperation entsprechend der y Wertangabe beendet wird.</td>
+</tr>
+
+<tr>
+<td>BufferSinX(x, y, w, h, Width, Frequency.f, Speed.f)</td><td>Horizontale Wellenform.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BufferSinY(x, y, w, h, Height, Frequency.f, Speed.f, Flags=#True)</td>
+<td>Vertikale Wellenform. Mit Flags = 0 wird der Canvas-Grafikspeicher nach Bearbeitung in einen internen Sinus-Speicher abgelegt um diesen mit BufferSinDraw() darzustellen (Farbe Schwarz = Transparent)</td>
+</tr>
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_Buffer = 2</th><th style="width:55%;">Erweiterung</th>
+</tr>
+
+<tr>
+<td>BufferBackScroll(x, y, Time=0)</td><td>Endlose Verschiebung des BackBuffer in horizontale- / vertikale Richtung. Der Parameter Time verzögert die Scroll-Bewegung zur etwas genaueren Einstellung der Geschwindigkeit. Die horizontale Verschiebung (x) kann fehlerhaft sein, weshalb diese nur bedingt verwendbar ist!</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BufferNoise(x, y, w, h, Noise=3, Color.l=$00FFFFFF)</td><td>Simuliert ein TV-Rauschen, Noise = Intensität, Color = BGR Farbwert (kein Alpha)</td>
+</tr>
+
+<tr style="background-color:#C5FFC3;color:#000000;">
+<th style="width:45%;">Privat</th><th style="width:55%;">Intern</th>
+</tr>
+
+<tr>
+<td>BufferFree()</td><td>Privat, wird bei Free() gelöscht.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BufferInit()</td><td>Privat, wird bei Init() eingerichtet.</td>
+</tr>
+
+</table>

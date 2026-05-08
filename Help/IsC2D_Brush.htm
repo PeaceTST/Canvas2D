@@ -1,0 +1,35 @@
+<table style="border-collapse:collapse;width:98%;font-family:Courier New;font-size:9pt;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_Brush = 1</th><th>Schnelle Grafikdarstellung</th>
+</tr>
+
+<tr>
+<td>IsBrush(ID)</td><td>= Listeneintrag, #Null = Fehler</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BrushDraw(ID)</td><td>Darstellung eines Brush an definierte Position.</td>
+</tr>
+
+<tr>
+<td>BrushFree(ID)</td><td>Löscht einen- oder alle (ID = #PB_All) definierten Brushs.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BrushInit(ID, Image, x, y, w, h)</td><td>Initialisiert einen Brush mit der Kennung ID und einen zuvor initialisierten Bild mit der #Nummer Image. Sollten die Bild-Dimensionen nicht der Breite/Höhe entsprechen wird ein Brush gekachelt dargestellt. Die Parameter x/y = Startposition, w/h = Breite/Höhe des Brush. Ein jeweiliger Alpha-Kanal wird nicht ünterstützt. Die Initialisierung muss vor allen anderen Befehlen ausgeführt werden.</td>
+</tr>
+
+<tr>
+<td>BrushMove(ID, x.f, y.f)</td><td>Verschiebt einen Brush innerhalb der Dimensionen mit der angegebenen Geschindigkeit in x/y. Eine Verschiebung erfolgt in allen Richtungen endlos.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BrushX(ID)</td><td>= horizontale Bewegungs-Position als Float-Wert des Brush welche durch BrushMove() geändert wurde.</td>
+</tr>
+
+<tr>
+<td>BrushY(ID)</td><td>= vertikale Bewegungs-Position als Float-Wert des Brush welche durch BrushMove() geändert wurde.</td>
+</tr>
+
+</table>

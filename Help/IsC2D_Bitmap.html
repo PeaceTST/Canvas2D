@@ -1,0 +1,88 @@
+<table style="border-collapse:collapse;width:98%;font-family:Courier New;font-size:9pt;" border="1">
+<tr>
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_Bitmap = 1</th><th style="width:55%;">Bilder für Animation, Font etc.</th>
+</tr>
+
+<tr>
+<td>BitmapAdd(ID, Image)</td><td>= #Bildnummer, fügt ein Bild zur Bitmap-Liste hinzu.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BitmapDraw(ID, x.f, y.f, Alpha=255, Flags=0)</td><td>Darstellung einer Bitmap im CanvasGadget. Flags = <b>#C2F_</b>Right [Bottom | Center | CenterX | CenterY]</td>
+</tr>
+
+<tr>
+<td>BitmapFlip(ID, Flags=0)</td><td>Spiegelt eine Bitmap horizontal (Flags = 0) oder vertikal (Flags = #C2F_Vertical).</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BitmapFree(ID)</td><td>Löscht ein- oder alle Bitmap-Bilder (ID = #PB_All)</td>
+</tr>
+
+<tr>
+<td>BitmapH(ID)</td><td>= #Pixel-Höhe</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BitmapID(ID)</td><td>= *Handle der Bitmap (ImageID)</td>
+</tr>
+
+<tr>
+<td>BitmapImage(ID)</td><td>= #Nummer der Bitmap.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BitmapInit(ID, *Memory, Length=0, Color.l=#PB_Default)</td><td>= #Bildnummer, initialisiert ein Bitmap-Bild mit der Kennung ID welches in *Memory vorliegt, #PB_Any wird unterstützt. Length = die Größe des *Memory oder Ende des Speicherbereich. Sollte für Length = 0 angegeben werden, wird *Memory als Zeiger auf einen @Dateinamen interpretiert, hierzu muss #IsC2D_File aktiv sein. Color = transparente Farbe.</td>
+</tr>
+
+<tr>
+<td>BitmapRange(ID, x.f, y.f)</td><td>= #True wenn die Koordinaten von x / y (z.B. Maus-Koordinaten) innerhalb der dargestellten Bitmap mit der Kennung ID befindet.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BitmapScale(ID, Ratio.f)</td><td>Proportionale Größenveränderung (Ratio = 1.0 &#x2259; 100%)</td>
+</tr>
+
+<tr>
+<td>BitmapW(ID)</td><td>= #Pixel-Breite</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BitmapX(ID)</td><td>= Horizontale Position.f der dargestellten Bitmap mit der Kennung ID.</td>
+</tr>
+
+<tr>
+<td>BitmapY(ID)</td><td>= Vertikale Position.f der dargestellten Bitmap.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BitmapZoom(ID, w=#PB_Default, h=#PB_Default)</td><td>Größenveränderung in Pixel.</td>
+</tr>
+
+<tr>
+<td>IsBitmap(ID)</td><td>= Listeneintrag, #Null = Fehler</td>
+</tr>
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_Bitmap = 2</th><th style="width:55%;">Erweiterung</th>
+</tr>
+
+<tr>
+<td>BitmapLoop(ID, Flags)</td><td>Erstellt aus der Bitmap mit der Kennung ID ein Endlos-Bild. Flags = #F_Horizontal für horizontale Anpassung und/oder #F_Vertical für vertikale Anpassung. <b>Wichtig</b>: BitmapLoop() muss <u>außerhalb</u> von Start() / Stop() aufgerufen werden!</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>BitmapScroll(ID, x, y, Time=0)</td><td>Verschiebt ein Bitmap-Bild um x/y Pixel in horizontaler- / vertikaler Richtung. Der Parameter Time verzögert die Scroll-Bewegung zur etwas genaueren Einstellung der Geschwindigkeit. <b>Wichtig</b>: BitmapScroll() muss <u>außerhalb</u> von Start() / Stop() aufgerufen werden!</td>
+</tr>
+
+<tr style="background-color:#C5FFC3;color:#000000;">
+<th style="width:45%;">Privat</th><th style="width:55%;">Intern</th>
+</tr>
+
+<tr>
+<td>BitmapCopy(ID)</td><td>= #Bildnummer, erstellt eine Kopie von ID in 32 Bit-Farbtiefe.</td>
+</tr>
+
+</table>
