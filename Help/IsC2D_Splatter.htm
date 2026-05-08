@@ -1,0 +1,83 @@
+<table style="FONT-SIZE:9pt; FONT-FAMILY: Courier New; WIDTH: 98%; BORDER-COLLAPSE: collapse" border="1">
+
+<tr style="COLOR: #000000; BACKGROUND-COLOR: #ffffa0">
+<th style="WIDTH: 45%">#IsC2D_Splatter = 1</th><th>Splatter</th>
+</tr>
+
+<tr>
+<td>SplatterAcceleration(ID, x, y)</td><td>Beschleunigung der Splatter-Partikel in den Richtungen x und y</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>SplatterAlpha(ID, Alpha=$FF)</td><td>Alpha = Transparenz der Partikel von 1 bis $FF</td>
+</tr>
+
+<tr>
+<td>SplatterBounce(ID, Percent.f)</td><td>Percent = die prozentuale Springhöhe nach dem Aufprallen auf den Boden.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>SplatterDraw(ID, h.f)</td><td>Darstellung des Splatter mit der Kennung ID. h = die Fallhöhe ausgehend von SplatterStart(). Rückgabewert = die Anzahl der aktiven Splatter-Partikel.</td>
+</tr>
+
+<tr>
+<td>SplatterEnergy(ID, Energy)</td><td>Maximale Leuchtdauer der Splatter-Partikel bevor die Ausblendung beginnt.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>SplatterFade(ID, Fade)</td><td>Geschwindigkeit mit der die Partikel nach beenden der Leuchtdauer ausgeblendet werden. Fade muss zwischen 1 (langsam) und 255 (schnell) angegeben werden.<tr></td>
+</tr>
+
+<tr>
+<td>SplatterFree(ID)</td><td>Löscht einen- oder alle aktiven Splatter (ID = #PB_All)</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>SplatterGravity(ID, Gravity)</td><td>Bestimmt die Gravitation welche die Splatter-Partikel in ihrer vertikalen Fallgeschwindigkeit beeinflussen. Je höher die Gravitation, desto schneller fallen die Partikel zu boden.</td>
+</tr>
+
+<tr>
+<td>SplatterH(ID)</td><td>= Pixelhöhe der Partikel.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>SplatterImage(ID, Image)</td><td>Setzt ein Bild für jeweilige Splatter-Partikel, Image = Bildnummer.</td>
+</tr>
+
+<tr>
+<td>SplatterInit(ID, Size, Number, Color.l=#Red)</td><td>Intialisiert einen Splatter. Size = Pixelgröße der jeweiligen Partikel. Number = Anzahl der Partikel eines Splatter. Color = RGB-Farbwert</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>SplatterLoop(ID, State)</td><td>Splatter in Endlosschleife darstellen. State = 1 schaltet den Endlosmodus an, State = 0 wieder aus.</td>
+</tr>
+
+<tr>
+<td>SplatterScale(ID, Ratio.f)</td><td>Proportionale Größenveränderung (Ratio = 1.0 &#x2259; 100%)</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>SplatterSpread(ID, SpreadX, SpreadY)</td><td>Streuungs-Breite / Höhe vom Startpunkt der Partikel aus.</td>
+</tr>
+
+<tr>
+<td>SplatterStart(ID, x.f, y.f)</td><td>Initiert den Splatter mit der Kennung ID an Position x / y. Mittels SplatterDraw() werden die Partikel dargestellt.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>SplatterStop(ID=#PB_All)</td><td>Beendet die Darstellung des Splatter mit der Kennung ID. ID = #PB_All beendet alle darestellten Splatter.</td>
+</tr>
+
+<tr>
+<td>SplatterW(ID)</td><td>= Pixel-Breite der Partikel.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>SplatterAnim(ID, AnimID))</td><td>Verwendet eine zuvor initialisierte <a href="IsC2D_Anim.html">Animation</a> mit der Kennung AnimID. Jeder Partikel wird als Animation dargestellt.</td>
+</tr>
+
+<tr>
+<td>IsSplatter(ID)</td><td>= Listeneintrag, #Null = Fehler</td>
+</tr>
+
+</table>
