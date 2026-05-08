@@ -1,0 +1,39 @@
+<table style="border-collapse:collapse;width:98%;font-family:Courier New;font-size:9pt;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_Twister = 1</th><th>Rotierenden Twister in 4 Farben darstellen</th>
+</tr>
+
+<tr>
+<td>IsTwister(ID)</td><td>= Listeneintrag, #Null = Fehler</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>TwisterAlpha(ID, Alpha=$FF)</td><td>Darstellungsintensität über Alpha = 0 (Transparent) bis 255 (volle Farbintensität).</td>
+</tr>
+
+<tr>
+<td>TwisterColor(ID, RGB1.l=0, RGB2.l=0, RGB3.l=0, RGB4.l=0)</td><td>Ändert den jeweiligen Farbwert der Twister-Seitendarstellungen. Ein Farbwert von #Null führt keine Änderung durch. Der Alphawert wird unterstützt.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>TwisterCopy(ID, x.f, y.f)</td><td>Kopiert einen Twister an Position x/y.</td>
+</tr>
+
+<tr>
+<td>TwisterDraw(ID, x.f, y.f)</td><td>Darstellung eines Twister an x/y Position. Die Positionsangaben beziehen sich relativ zum Mittelpunkt des Canvasgadget.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>TwisterFree(ID)</td><td>Löscht einen- oder alle (ID = #PB_All) definierten Twister.</td>
+</tr>
+
+<tr>
+<td>TwisterFX(ID, Speed.f, Amplitude.f)</td><td>Ändert die Twister-Einstellungen Speed = Rotationsgeschwindigkeit, Amplitude = Eigenrotation.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>TwisterInit(ID, Size, Speed.f, Amplitude.f, Mode=#C2DF_VERTICAL, w=0, h=0)</td><td>Initialisiert einen Twister mit der Kennung ID. Size = gesamte Breite der 4 Farbseiten. Speed = Rotationsgeschwindigkeit, Amplitude = Sinusperiode der Eigenrotation, Mode = vertikale (standard) oder horizontale (#C2DF_HORIZONTAL) Darstellung. w und h dienen als begrenzendes Längenmaß (#Null = ganze Höhe bzw. Breite des Canvas). Die Initialisierung muss vor allen anderen Befehlen erfolgen.</td>
+</tr>
+
+</table>

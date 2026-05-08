@@ -1,0 +1,27 @@
+<table style="border-collapse:collapse;width:98%;font-family:Courier New;font-size:9pt;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_SysFont = 1</th><th style="width:55%;">Inkludierter System-Font</th>
+</tr>
+
+<tr>
+<td>IsSysFont(ID)</td><td>= Listeneintrag, #Null = Fehler</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>SysFontFree(ID)</td><td>Löscht ein- oder alle SystemFonts (ID = #PB_All)</td>
+</tr>
+
+<tr>
+<td>SysFontID(ID)</td><td>= FontID für Gadgets, #Null = Fehler</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>SysFontInit(ID, Font$, *Memory, Length, h=0, w=0, Flags=0)</td><td>= FontID, Null = Fehler. Initialisiert einen inkludierten SystemFont (TTF,FON,OTF) welcher in *Memory vorliegt. Dieser Font kann mit den Standard-Purebasic Font()- und DrawText() Anweisungen verwendet werden. Font$ = interne Bezeichnung des Font (Titel nicht Dateiname!)</td>
+</tr>
+
+<tr>
+<td>SysFontSet(ID)</td><td>Setzt den aktuellen SystemFont zur Texterstellung.</td>
+</tr>
+
+</table>

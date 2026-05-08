@@ -1,0 +1,35 @@
+<table style="font-family:Courier New;font-size:9pt;border-collapse:collapse;width:98%;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_Text = 1</th><th>Bitmap Text</th>
+</tr>
+
+<tr>
+<td>IsText(ID)</td><td>= Listeneintrag, #Null = Fehler</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>TextDraw(ID, x.f, y.f, Alpha=255, Flags=#Null)</td><td>Zeichnet einen zuvor initialisierten Textblock an Position x,y. Alpha = Transparenz (0 &#x2026; 255). Wird mit Flags = #C2F_Center/X/Y oder #C2F_Bottom/Right angegeben, dienen x,y als zusätzliche Offset-Korrektur. Über FontSelect() wird zuvor der zu verwendete Bitmap-Font festgelegt.</td>
+</tr>
+
+<tr>
+<td>TextFree(ID)</td><td>Löscht ein- oder alle initialisierten Texte (ID = #PB_All)</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>TextH(ID)</td><td>= #Pixel-Höhe</td>
+</tr>
+
+<tr>
+<td>TextInit(ID, *Memory.Ascii, Flags=#Null)</td><td>Initialisiert einen Text mit der Kennung ID welcher in *Memory vorliegt. Mit Flags = #C2F_CenterX wird der Text zeilenweise zentriert dargestellt.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>TextStringDraw(x.f, y.f, Text$, Alpha=255)</td><td>Zeichnet einen variablen Text. Entgegen TextDraw() muss dieser nicht zuvor initialisiert werden, ist jedoch in seiner Darstellung zeitaufwendiger. Vor jeder Darstellung kann mittels FontSelect() ein beliebiger Bitmap-Font erneut zugeordnet werden.</td>
+</tr>
+
+<tr>
+<td>TextW(ID)</td><td>= #Pixel-Breite</td>
+</tr>
+
+</table>

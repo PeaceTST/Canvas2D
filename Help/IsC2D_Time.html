@@ -1,0 +1,17 @@
+<table style="font-family:Courier New;font-size:9pt;border-collapse:collapse;width:98%;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_Time = 0, 1, 2</th><th>Zeitmodus</th>
+</tr>
+
+<tr>
+<td></td><td>Der Ablauf von C2D wird in Millisekunden gesteuert. Um einen aktuellen Zeitwert zu ermitteln stehen 3 Auswahlmöglichkeiten zur Verfügung:
+<pre style="margin-left:12px;margin-right:12px;background:#FFFFC6;font-size:8pt;">
+<b>#IsC2D_Time = 0 &#x2259; ElapsedMilliseconds()</b> (Standard)
+#IsC2D_Time = 1 &#x2259; timeGetTime_()
+#IsC2D_Time = 2 &#x2259; GetTickCount_()
+</pre>
+Im Test zeigte sich GetTickCount_() als schnellste Zeitermittlung, jedoch als nicht geeignet für den Programmablauf von C2D da nach jedem Aufruf von Start() standardmäßig ein Delay(1) zur Ressourcen-Schonung ausgeführt wird und es hier zu erheblichen Zeitverzögerungen führte. Zudem geben GetTickCount_() und timeGetTime_() nach einem Zeitintervall von ~50 Tage negative Quad-Werte in x86 Kompilaten zurück. #IsC2D_Time = 0 &#x2259; ElapsedMilliseconds() wurde als standard festgelegt da in x86 & x64 jeweils positive Werte zurückgegeben werden. Der erste Aufruf beginnt immer bei NULL!</td>
+</tr>
+
+</table>
