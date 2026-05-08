@@ -1,0 +1,554 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//DE">
+<html>
+<head>
+<title>History</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+}
+p {background:#AFEAFF;padding:4px;font-size:larger;font-weight:bold;}
+div {background:#C5FFC3;padding:8px;}
+pre {padding:4px;}
+</style>
+
+</head>
+<body><pre><p>17.04.2026 - v1.00</p><div>[Neu]
++ PageText: PageTextDraw() "{0,#,(x,y)}" Bitmap-Bild darstellen
++ PageText: PageTextDraw() "{2,#}" Wartezeit für eine Seite festlegen
++ Lizenz für UPX hinzugefügt
+
+[Geändert]
+• GdipCatch(): Image-Transparenz optimiert (TransparentBlack)
+• FontRawInit(): Initialisierung der Rawfont-Daten optimiert (TransparentBlack)
+• BitmapColor: Custom Filter Parameter-Korrektur auf Long (x64)
+• PageText: PageTextInit() korrekte Position mit Flag #C2F_Center
+• PageText: PageTextWait() zusätzlicher Parameter PageID
+• PageText: PageTextWait() Zeitangabe -1 zeigt Seite nicht an
+• Allgemeine Optimierungen / Korrekturen der Includes und Beispiele
+• Tools: <a href="https://github.com/upx/upx/">UPX</a> erneuert auf v5.1.1
+• Sources an Purebasic v6.30 LTS x86-64 ASM/C angepasst
+• Ausführbare Dateien mit FASM v1.73.35 assembliert
+• Demos: TarkusTeam, Crystal, DefJam, Paradox erweitert
+• Hilfe korrigiert / aktualisiert
+</div>
+
+<pre><p>16.04.2024 - v0.98 beta</p><div>[Neu]
++ Gui: GuiDregGet() Wert eines DatenRegisters D0..D9 ermitteln
++ Gui: GuiDregSet() DatenRegisters D0..D9 einen Wert zuweisen
++ Gui: GuiDrawText() "{D#,#}" DatenRegister D0..D9 - Wert zuweisen
++ Gui: GuiDrawText() "{CH,#}" CHaracter - Textdarstellung eines Buchstaben
++ Gui: GuiDrawText() "{PC,#(,#)}" PaletteColor - Vorder- (,Hintergrundfarbe)
++ Gui: GuiDrawText() "{TS,#(,#)}" TextSize - Minimum Textbreite (,Texthöhe)
++ Gui: GuiDrawText() DataRegister D0..D9 als Parameter einsetzbar
+
+[Geändert]
+• Gui: ID = #PB_Any von 4096 auf 9999 maximiert (PB Limitierung) 
+• Splatter: Splatter Startpositionen optimiert
+• Tools: C2D_SplatterEditor an C2D v0.98 angepasst
+• Tools: <a href="https://github.com/upx/upx/">UPX</a> erneuert auf v4.2.3
+• Sources an Purebasic v6.04 LTS x86-64 angepasst
+• Hilfe überarbeitet / ergänzt
+</div>
+
+<pre><p>23.11.2023 - v0.97 beta</p><div>[Geändert]
+• Gui: GuiMenuPopup() korrekte Handhabung der internen Gadgetlist
+• Music: #XMU_SCA SCAL_x86-64.dll erneuert auf v2.12
+• Sources an Purebasic v6.03 LTS x86-64 angepasst
+• Hilfe überarbeitet / ergänzt
+</div>
+
+<p>21.08.2023 - v0.96 beta</p><div>[Neu]
++ <A href="IsC2D_Splatter.htm">Splatter</a>: Include für Splatter-Partikel
++ Anim: AnimRange() bestimmt das Start-Frame und die Frame-Anzahl einer Animation
++ Bitmap: BitmapInit() unterstützt #PB_Any als ID
++ Gui: GuiDrawFrame() einen Rahmen in aktuelle Textausgabe zeinchen
++ Gui: GuiDrawText() "{DF}" DeFault - Textdarstellung auf Standard zurücksetzen
++ Gui: GuiDrawText() "{EB,#(,mode)}" EmBos - Text mit Kanten darstellen
++ Gui: GuiDrawText() "{EX}" EXit - Textdarstellung / Berechnungen vorzeitig beenden
++ Gui: GuiDrawText() "{FR,#(,x,y)}" FRame - Text einrahmen
++ Gui: GuiDrawText() "{GI,#(#y)}" GuiImage - Bild in Textausgabe darstellen
++ Gui: GuiDrawText() "{IV,#}" InVerse - Text invertieren
++ Gui: GuiDrawText() "{MN,#(,$)}" MeNu - Menüpunkt / -Haken)
++ Gui: GuiDrawText() "{NL}" NiL - Keine Funktion, Platzhalter
++ Gui: GuiDrawText() "{TH,#}" TextHeight - Texthöhe manuell bestimmen
++ Gui: GuiDrawText() "{TW,#}" TextWidth - Textbreite manuell bestimmen
++ Gui: GuiDrawText() "{UL,#(,y)}" UnderLine - Text unterstrichen
++ Gui: GuiDrawText() "{XP,#}" XPos - Text horizontal pixelgenau positionieren
++ Gui: GuiDrawText() "{YP,#}" YPos - Text vertikal pixelgenau positionieren
++ Gui: GuiDrawTextRaw() Text ohne Steuercodes {} ermitteln
++ Gui: GuiImageAdd() fügt ein Bild der internen Liste hinzu
++ Gui: GuiImageDraw() zeichnet ein Bild in der aktuellen Ausgabe
++ Gui: GuiImageFree() löscht ein- bzw. alle Datensätze der gelisteten Bilder
++ Gui: GuiImageGadget() Parameter für Raster bei transparenten Hintergrund
++ Gui: GuiImageH() Pixel-Höhe eines gelisteten Bildes
++ Gui: GuiImageID() ermittelt die Bildnummer eines gelisteten Bildes
++ Gui: GuiImageW() Pixel-Breite eines gelisteten Bildes
++ Gui: GuiMenuFree() Menü löschen
++ Gui: GuiMenuGetItem() Zuletzt gewählter Eintrag
++ Gui: GuiMenuGetState() Status des Menü ermitteln
++ Gui: GuiMenuGetText() String von zuletzt gewählten Eintrag
++ Gui: GuiMenuInit() Menü initialisieren
++ Gui: GuiMenuItemAdd() Eintrag zu Menü hinzufügen
++ Gui: GuiMenuItemDelete() Eintrag von Menü entfernen
++ Gui: GuiMenuItemDisable() Eintrag von Menü de-/aktivieren
++ Gui: GuiMenuItemIsDisabled() Status eines Menüeintrags ermitteln
++ Gui: GuiMenuItemIsToggled() Umschaltstatus eines Menüeintrags ermitteln
++ Gui: GuiMenuItemToggle() Eintrag von Menü umschalten
++ Gui: GuiMenuPopup() Menü darstellen mit Effekt
++ Gui: GuiMenuSetState() Status des Menü setzen
++ Gui: GuiMenuSize() Anzahl der Menüeinträge
++ Gui: GuiPaletteSetColor() neuer Farbwert für Palettenposition
++ Gui: GuiSetToggleText() neuer Text bei gedrückten Schalter
++ Gui: GuiTab() bestimmt die Tab-Breite in Freizeichen
++ Gui: IsGuiImage() testet ob ein Bild gelistet wurde
++ Gui: IsGuiMenu() Test ob Menü initialisiert
++ Line3D: Line3DDepth() Tiefe eines L3D-Objekts
++ Line3D: Line3DHeight() Höhe eines L3D-Objekts
++ Line3D: Line3DSquare() Faktor für das Eckmaß eines L3D-Objekts
++ Line3D: Line3DWidth() Breite eines L3D-Objekts
++ Tools: C2D_SplatterEditor
++ Tools: <a href="https://github.com/lab313ru/powerpacker_src">PowerPack</a> v1.0 / PP20 36.10 (28.9.1993) Batch Drag &amp; Drop für x86/x64
+
+[Geändert]
+• Anim: AnimRange() umbenannt in AnimZone()
+• Anim: AnimRewind() umbenannt in AnimPingPong()
+• Bitmap: Bei Fehler gibt BitmapInit() #Null zurück
+• Gui: GuiDrawText() korrekte Tab-Breite mit verschiedenen Fonts
+• Gui: GuiDrawText() {FC} in {CF} geändert (ColorFront)
+• Gui: GuiDrawText() {BC} in {CB} geändert (ColorBack)
+• Gui: GuiDrawText() {FP} in {PF} geändert (PaletteFront)
+• Gui: GuiDrawText() {BP} in {PB} geändert (PaletteBack)
+• Gui: GuiPaletteID() umbenannt in GuiPaletteGetColor()
+• Gui: GuiSetState() Gadgets mit Toggle-Effekt werden korrekt dargestellt
+• Gui: GuiCursorSet() Änderung in Editor- / Webgadget ausgestellt
+• Gui: GuiDisable() verbesserte Textdarstellung wenn Gadget inaktiv
+• Allgemeine Optimierungen / Korrekturen der Includes
+• Sources an Purebasic v6.02 LTS x86-64 angepasst
+• Ausführbare Dateien mit FASM v1.73.31 assembliert
+• Tools: <a href="https://github.com/upx/upx/">UPX</a> erneuert auf v4.02
+</div>
+
+<pre><p>02.01.2023 - v0.95 beta</p><div>[Neu]
++ Gui: GuiDrawText() Grenzline - SplitLine "{SL,#alpha(,#mode,#yoffset)}"
++ Gui: GuiDrawText() Kreis in Vordergrundfarbe - CIrcle "{CI,#x,#y,#rx(,#ry)}"
++ Gui: GuiDrawText() Viereck in Vordergrundfarbe - BoX "{BX,#x,#y,#w,#h}"
++ Gui: GuiDrawText() Linie in Vordergrundfarbe - LIne "{LI,#x,#y,#w,#h}"
++ Gui: GuiDrawText() Flächen mit Vordergrundfarbe füllen - FIll "{FI,#x,#y}"
++ Gui: GuiDrawText() #PB_2DDrawingMode Zeichenmodus - DrawingMode "{DM(,#mode)}"
+
+[Geändert]
+• Gui: GuiDrawText() {Kommandos} in {Buchstaben} geändert
+• Gui: GuiDrawTextH() berücksichtigt vertikale Text-Offsets "{YO,#}"
+• Allgemeine Optimierungen / Anpassungen der Includes
+</div>
+
+<p>19.08.2022 - v0.94 beta</p><div>[Neu]
++ Anim: AnimCopy() Flag für Erstellung separater Frames
++ Anim: AnimFlip() spiegelt eine Animation horizontal / vertikal
++ Anim: AnimRange() Koordinate innerhalb einer dargestellten Animation
++ Anim: AnimSeen() Animation im sichtbaren Canvas-Bereich
++ Anim: AnimX() horizontale Position
++ Anim: AnimY() vertikale Position
++ Anim: AnimCopy() #PB_Any wird für NewID unterstützt
++ Anim: AnimInit() #PB_Any wird unterstützt
++ Bitmap: BitmapFlip() spiegelt eine Bitmap horizontal / vertikal
++ Bitmap: BitmapRange() Koordinate innerhalb einer dargestellten Bitmap
++ Bitmap: BitmapX() horizontale Position
++ Bitmap: BitmapY() vertikale Position
++ FontColor: FontBorder() erstellt eine farbige Buchstaben-Umrandung
+
+[Geändert]
+• Include: C2D_Formats.pbi umbenannt in C2D_Types.pbi
+• Flags: #C2D_MUSIC_(?) umbenannt #XMU_(?)
+• Flags: #C2D_GUI_Gadget(?) umbenannt in #Gui_Gadget(?)
+• Flags: #C2DF_(?) umbenannt in #C2F_(?)
+• Anim: AnimPlayStart() / AnimPlayDraw() unterstützen AnimDirection()
+• StarsZ3D: Zentrierte Positionskorrektur der einzelnen Sterne
+• Hilfe allgemein überarbeitet / ergänzt
+</div>
+
+<p>04.05.2022 - v0.93 beta</p><div>[Neu]
++ <A href="IsC2D_StarsZ3D.htm">StarsZ3D</a>: Include für rotierend- / größenveränderndes 3D Sternenfeld 
++ <A href="IsC2D_RotoZoom.htm">RotoZoom</a>: Include für rotierend- / größenverändernde Bild-Textur
++ <A href="IsC2D_Twister.htm">Twister</a>: Include für rotierende Twister in 4 Farben (ßeta)
++ Anim: AnimCount() ermittelt die Frame-Anzahl einer Animation
++ Anim: AnimPlayStart() initiert das Abspielen einer Animation
++ Anim: AnimPlayDraw() Wiederholtes abspielen einer Animation
++ BitmapColor: BitmapLumen() prozentuale Einstellung der Farbintensität
++ BitmapColor: BitmapShine() Alpha-Intensität nach Farbwert einstellen
++ Gui: GuiGetData() ermittelt den individuellen Datenwert von einem Gadget
++ Gui: GuiSetData() setzt einen individuellen Datenwert für ein Gadget
++ Pixel3D: Pixel3DAxis() verschiebt die Achsen relativ zum Mittelpunkt
++ Demos: HQC, Megabyte, SkidRow, Subway, Thrust, Vision Factory
++ Beispiel: Copper_Move, RotoZoom_Logo, StarsZ3D_Simple, Twister_Copy
+
+[Geändert]
+• Pixel3D: Pixel3DDrawColor() Objekt-Positionen relativ zum Mittelpunkt
+• Allgemeine Optimierungen / Korrekturen der Includes
+• Hilfe stellenweise überarbeitet / ergänzt
+• Ausführbare Dateien mit FASM v1.73.30 assembliert
+</div>
+
+<p>07.06.2021 - v0.92 beta</p><div>[Neu]
++ <A href="IsC2D_StarsR3D.htm">StarsR3D</a>: Include für rotierendes 3D Sternenfeld
++ Gui: GuiDrawText() Gadget-Farbe mittels {13,#RGB} und {14,#PaletteID}
++ Beispiel: StarsR3D_Simple
+
+[Geändert]
+• Music: #C2D_MUSIC_SCA SCAL_x86-64.dll erneuert auf v2.07
+• Allgemeine Optimierungen / Korrekturen der Includes
+</div>
+
+<p>05.04.2021 - v0.91 beta</p><div>[Neu]
++ Gui: GuiDisableRegion() Gadgets innerhalb Fensterbereich de-/aktivieren
++ Gui: GuiDrawButtonGadget() Buttongadget mit Unterstützung von {Code,Param)
++ Gui: GuiDrawTextGadget() Textgadget mit Unterstützung von {Code,Param)
++ Gui: GuiDrawText() Bilddarstellung und y-Offset mittels {10,#image(,y)}
++ Gui: GuiGadgetColor() unterstützt GuiStringGadget()
++ Gui: GuiTrackGadget() / GuiProgressGadget() zusätzliches Flag für BarFrame
++ Demos: Legend
++ Beispiel: Brush_Move
+
+[Geändert]
+• Gui: GuiCursorSet() Parameter auf Fensternummer beschränkt
+• Gui: GuiRefresh(#PB_All) Neuzeichnung eines GuiDrawTextGadget()
+• Gui: GuiCopper() korrektur des CopperMode 2 (Elliptical)
+• Gui: GuiTrackGadget() korrektur der min. / max. Darstellung
+• Gui: GuiFrame() korrektur der #C2D_GuiFrameBar Darstellung
+• Gui: Flags umbenannt #C2DF_(Flag)
+• Music: #C2D_MUSIC_SCA SCAL_x86-64.dll erneuert auf v2.05
+• Music: #C2D_MUSIC_PT2 playPT2.lib erneuert auf v1.61 (x86-64)
+• Music: #C2D_MUSIC_TPT tinyPT2.lib erneuert auf v1.61 (x64)
+• Music: #C2D_MUSIC_ST2 playST2.lib erneuert auf v0.35 (x86-64)
+• PageText: Flags umbenannt #C2DF_(Flag)
+• Allgemeine Optimierungen / Korrekturen der Includes
+• Sources an Purebasic v5.72 LTS x86-64 angepasst
+• Ausführbare Dateien mit FASM v1.73.27 assembliert
+• Lizenzen für Module-Replayer aktualisiert
+</div>
+
+<p>12.11.2020 - v0.8 beta</p><div>[Neu]
++ Gui: GuiGadget() Nummer von #Gadget
++ Gui: #PB_Any für Erstellung von Gadgets
++ Gui: GuiDrawText() Textumrandung {6,#alpha(,#bold)}
+
+[Geändert]
+• Gui: Alle erstellten Gadgets geben die ID zurück
+</div>
+
+<p>17.09.2020 - v0.7 beta</p><div>[Neu]
++ #IsC2D_C2D: Flag zum abschalten von Canvas2D (nur für unabhängiges Gui)
++ Music: #C2D_MUSIC_SCA unterstützt AmpMaster_x86.dll (x86)
++ Music: #C2D_MUSIC_SCA unterstützt Zip gepackte Archive
++ Music: #C2D_MUSIC_SCA (MCI) spielt *.flac (x86-64)
++ Music: #C2D_MUSIC_API für *.wav
++ Music: #C2D_MUSIC_TFC tinyFC4.lib v1.29 (x86 -3.3KB / x64 -3.2KB)
++ Music: #C2D_MUSIC_THX tinyAHX.lib v0.27 (x86 -2.2KB / x64 -2.6KB)
++ Music: #C2D_MUSIC_TPT tinyPT2.lib v1.60 (x86 -6.1KB / x64 -6.9KB)
++ Gui: GuiPalette Anweisungen zur einfachen Farbverwaltung
++ Gui: GuiGadgetColor() ändert die Text- / Hintergrundfarbe eines Gadgets
++ Gui: GuiToggleColor() Hintergrundfarbe für toggled GuiButtonGadget()
++ Gui: GuiGadgetID() ermittelt das Handle eines Gadgets
++ Gui: GuiIsDisabled() ermittelt Zustand der Deaktivierung
++ Gui: GuiDrawText() unterstützt {Code,Param} Tags
++ Gui: GuiDrawFont() ändert die Schriftart
++ Gui: GuiDrawTextH() tatsächliche Höhe eines String
++ Gui: GuiDrawTextW() tatsächliche Breite eines String
++ Gui: GuiDrawFrame() zeichnet einen Rahmen in aktueller Ausgabe
++ Gui: IsGuiFont() ermittelt ob ein Font initialisiert wurde
++ Gui: GuiFontSet() ändert die Schriftart
++ Gui: GuiCursorInit() initialisiert einen Mauszeiger aus einer *.rc Datei
++ Gui: GuiCursorSet() ändert den Mauszeiger
++ Gui: Flag #C2D_Gui_Left richtet Text / Bild am linken Rand aus (Button)
++ Gui: Flag #C2D_Gui_FrameBar einfacher Frame-Balken (alle Gadgets)
++ Gui: Flag #C2D_Gui_FrameFine eingeebnete Frame-Darstellung (alle Gadgets)
++ Tools: SCAL DLL Dokumentation in CHM erstellt (orientiert an BASSMod)
++ Hilfe: Lizenz für Minizip hinzugefügt
+
+[Geändert]
+&#x2022; Music: mmp_x86-64.dll umbenannt in SCAL_x86-64.dll (Scal = Ahd. f. Schall)
+&#x2022; Music: #C2D_MUSIC_SCA SCAL_x86-64.dll erneuert auf v2.00
+&#x2022; Music: #C2D_MUSIC_SCA API-Bezeichnungen geändert
+&#x2022; Music: #C2D_MUSIC_SCA reaktiviert #C2D_MUSIC_BMF (x86)
+&#x2022; Music: #C2D_MUSIC_SCA bis auf [S68,SCA,V1M] Unterstützung aller Lib-Includes
+&#x2022; Music: #C2D_MUSIC_SCA Formatunterstützung x86-64 = 1060 / 424
+&#x2022; Music: #C2D_MUSIC_SCA Fehler in Dateinamen behoben
+&#x2022; Music: #C2D_MUSIC_SCA Fehler in Zuordung behoben
+&#x2022; Music: #C2D_MUSIC_PT2 playPT2.lib erneuert auf v1.60 (x86-64)
+&#x2022; Music: #C2D_MUSIC_ST3 playST3.lib erneuert auf v1.01 (x86-64)
+&#x2022; Music: #C2D_MUSIC_STM playSTM.lib erneuert auf v0.34 (x86-64)
+&#x2022; Music: #C2D_MUSIC_BAS Parameter-Korrektur bei Datenzugriff aus Speicher 
+&#x2022; Music: #C2D_MUSIC_BRO umbenannt in #C2D_MUSIC_BMF (Extension = *.bmf)
+&#x2022; Music: #C2D_MUSIC_FLC umbenannt in #C2D_MUSIC_FLA (Extension = *.fla)
+&#x2022; Music: #C2D_MUSIC_ST2 umbenannt in #C2D_MUSIC_STM (Extension = *.stm)
+&#x2022; Music: #C2D_MUSIC_ST3 umbenannt in #C2D_MUSIC_S3M (Extension = *.s3m)
+&#x2022; Music: Compiler-Definierung von #C2D_MUSIC_[mode] als separates Include
+&#x2022; Gui: GuiFontSet() möglicher Fehler bei Auswertung der FontID behoben
+&#x2022; Gui: GuiStringGadget() unterstützt Custom-Mauszeiger
+&#x2022; Gui: GuiDrawText() Fehler bei horizontaler Offset-Verschiebung behoben
+&#x2022; Gui: GuiTrackBarGadget() unterstützt vertikales Offset
+&#x2022; SysFont: SysFontSelect() umbenannt in SysFontSet()
+&#x2022; SysFont: SysFontSet() möglicher Fehler bei Auswertung der FontID behoben
+&#x2022; Tools: C2D_Compiler UPX-Kompression standartmäßig aus (false/true) 
+&#x2022; Demos: Tarkus Team nochmals beschleunigt
+
+[Ersetzt]
+- Music: #C2D_MUSIC_MMP ersetzt mit #C2D_MUSIC_SCA
+- Tools: SCAL DLL ohne Source da unabhängig von Canvas2D verfügbar
+- Tools: SCAL Player ausgelagert da eigenständiges Tool
+- Gui: GuiFont() ersetzt mit GuiFontSet()
+</div>
+
+<p>11.05.2020 - v0.6 beta</p><div>[Neu]
++ <a href="IsC2D_Brush.htm">Brush</a>: Include zur schnellen Grafikdarstellung
++ <a href="IsC2D_Gui.htm">Gui</a>: Include zur Gui-Gadget Erstellung
++ <a href="IsC2D_Poly3D.htm">Poly3D</a>: Include zur Polygon-Darstellung/Rotation
++ Module: ViewPort() Korrektur des Sichtfelds
++ Ball3D: Ball3DImage() ermittelt / setzt ein Ball3D Bild
++ Bitmap: BitmapLoop() für Endlos-Darstellung
++ Buffer: BufferFrontGrab() transparente Zwischenspeicherung
++ Buffer: BufferFrontDraw() transparente Darstellung
++ Copper: CopperBitmap() zusätzliche Offset/Alpha-Parameter
++ Guru: Zusätzlicher Parameter für Farbgebung
++ PageText: PageTextEffect() Effekt für Seitendarstellung
++ Music: #C2D_Music_MMP (MED) spielt *.it, *.s3m, *.xm (x86)
++ Music: #C2D_Music_MMP (MCI) spielt *.opus (x86-64)
++ Tools: Line3D Editor Menü für Poly3D Objekte (*.p3d)
++ Tools: Line3D Editor Reset in Vorschau
++ Tools: Line3D Editor X/Y/Z Tasten für Blickwinkel
++ Tools: Line3D Editor alternative Dots
++ Tools: C2D_Compiler hinzufügen einer Resource-Datei (*.rc)
++ Struktur: Union (a,b,w,l,i,q)
++ Beispiele: Poly3D_Logo, Gui_Gadgets
+
+[Geändert]
+&#x2022; Ball3D: Zentrierte Canvas-Darstellung (x=0,y=0)
+&#x2022; Ball3D: Ball3DSetAngle() umbenannt in Ball3DAngle()
+&#x2022; Ball3D: Ball3DSetSpin(() umbenannt in Ball3DSpin()
+&#x2022; Bitmap: #IsC2D_Bitmap = 0 (off) by default
+&#x2022; Bitmap: BitmapID() umbenannt in BitmapImage()
+&#x2022; Bitmap: BitmapID() ermittelt jetzt Handle des Bildes
+&#x2022; Copper: CopperID() umbenannt in CopperImage()
+&#x2022; Copper: Zuordnung der Farb-Gradients korrigiert
+&#x2022; FlatBar: FlatBarID() umbenannt in FlatBarImage()
+&#x2022; GdiPlus: GdipCatch() einheitliche Union-Struktur
+&#x2022; Line3D: Line3DSetAngle() umbenannt in Line3DAngle()
+&#x2022; Pixel3D: Zentrierte Canvas-Darstellung (x=0,y=0)
+&#x2022; Pixel3D: Pixel3DSetAngle() umbenannt in Pixel3DAngle()
+&#x2022; PageText: Seiteneffekte #FP_[] umbenannt in #C2D_PageText_[]
+&#x2022; PageText: Fehler bei #C2D_PageText_FadeRight korrigiert
+&#x2022; SysFont: SysFontHD() umbenannt in SysFontID()
+&#x2022; SysFont: SysFontInit() überprüft Initialisierung
+&#x2022; Music: Flagbezeichnungen geändert in #C2D_Music_[?]
+&#x2022; Music: Flag #C2D_Music_STM umbenannt in #C2D_Music_ST2 
+&#x2022; Music: #C2D_Music_FT2 playFT2.lib erneuert auf v1.04 (x86-64)
+&#x2022; Music: #C2D_Music_FC4 playFC4.lib erneuert auf v1.29 (x86-64)
+&#x2022; Music: #C2D_Music_PT2 playPT2.lib erneuert auf v1.59 (x86-64)
+&#x2022; Music: #C2D_Music_ST2 playST2.lib erneuert auf v0.33 (x86-64)
+&#x2022; Music: #C2D_Music_ST3 playST3.lib erneuert auf v0.99 (x64)
+&#x2022; Music: #C2D_Music_MMP mmp_x86-64.dll erneuert auf v1.01
+&#x2022; Music: Übereinstimmende Anpassung der Lib-Imports
+&#x2022; Tools: PureCompile in C2D_Compiler umbenannt
+&#x2022; Tools: C2D_Compiler erweiterte Informationen
+&#x2022; Tools: C2D_Compiler Option /DPIAWARE standardmäßig aus
+&#x2022; Tools: C2D_Compiler neues Icon
+&#x2022; Tools: C2D_CanvasTest verwendet mmp_x86-64.dll für Music
+&#x2022; Beschleunigte Static-Variablenzuweisung (Faktor: x86 ~3.2 / x64 ~2.5)
+&#x2022; Einheitliche Bildzuweisungen (Image &#x2259; BitmapID, *Image etc.)
+&#x2022; Allgemeine Optimierungen der Includes
+&#x2022; Demos: Angles, Switch, Tarkus Team, Vision Factory beschleunigt
+&#x2022; Demos: BoingBall Rasterlinien entsprechen Zoom-Faktor
+&#x2022; Demos: Fairlight Fred - Fairlight Crack Intro.psid (x86)
+&#x2022; Ausführbare Dateien mit FASM v1.73.24 assembliert
+
+[Ersetzt]
+- Ball3DGetImage() / Ball3DSetImage() ersetzt mit Ball3DImage()
+- BitmapHD() ersetzt mit BitmapID()
+- PageTextFxIn() / PageTextFxOut() ersetzt mit PageTextEffect()
+- Struktur: RS_Raw ersetzt mit Union
+</div>
+
+<p>09.02.2020 - v0.5 beta</p><div>[Neu]
++ <a href="IsC2D_Pixel3D.htm">Pixel3D</a>: Include zur Pixel-Rotation einer Bitmap
++ <a href="IsC2D_Bounce.htm">Bounce</a>: Include zur einfachen Berechnung von beschleunigten Auf-/Abprallen
++ ScrollText: Text-Effekt zur Einbindung von Pixel3D Bilder {#FC_Pixel3D}
++ MoveText: #IsC2D_MoveText = 2 Erweiterung für Text-Effekt {#FC_Font}
++ Stars3D: #IsC2D_Stars3D = 2 Verwendung von schnellen 1px Sternen
++ Guru: IsGuru() zur Überprüfung ob Guru dargestellt wird 
++ Help: Zeigt FPS und Zeitverbrauch (ms) für Darstellung pro FPS
++ NetWork: NetWorkUrl() Konvertierung einer Url in sichere Zeichen
++ Music: #F_FLC nativ für *.flac Musikformat (x86-64)
++ Music: #F_OGG nativ für *.ogg Musikformat (x86-64)
++ Music: #F_STM playSTM.lib (v0.31) spielt ScreamTracker 2.3 Musik (x86-64)
++ Music: #F_MMP Unterstützt die mmp_x86.dll / mmp_x64.dll
++ Music: MusicInit() für #F_MMP
++ XUnPack: Unabhängiges Plugin-Module (XUP::)
++ XUnPack: #XUP_UICE entpackt Atari Atomik 3.5 / Ice! 2.1/2.4 (x86-64)
++ XUnPack: #XUP_JCG1 unterstützt Ent-/Packer für JCalG1 (nur x86)
++ XUnPack: #XUP_APLB, #XUP_JCG1 *CallBack() während Packvorgang
++ XUnPack: #XUP_FIMP erkennt 'M.H.' Custom-Header
++ Data: Font/FON/ 14 original Amiga 500 Fonts in A500*.fon konvertiert / beigefügt
++ Tools: PureCompile unterstützt /DLL, /THREAD und /DPIAWARE (ab PB 5.70)
++ Tools: PureCompile Option zum Speichern-, Laden-, Standard-Einstellungen
++ Tools: PureCompile Schalter für schnelle Pfadeinstellungen
++ Tools: PureCompile zeigt Informationen über Status
++ Tools: MMP_DLL MultiModulePlayer Library v1.00 (x86-64)
++ Tools: Ball3D Editor Zentrierung des Canvas-Gadget (F4)
++ Tools: Ball3D Editor bei Neustart Wiederherstellung des aktuellen Objekt
++ Tools: Line3D Editor bei Neustart Wiederherstellung des aktuellen Objekt
++ Tools: UPX Batch Drag & Drop für x64
++ Konstante: #C2D_XPB$ beinhaltet Version von Purebasic
++ Konstante: #C2D_XC2D und #C2D_XC2D$ beinhalten Version von Canvas2D
++ Hilfe: Auflistung diverser Macros (s. Tables)
++ Demos: Ackerlight, Switch
++ Beispiele: Bounce_Anim, Line3D_Goldrunner, Pixel3D_X-Out, URL_Player
++ Executables: Beispiele auch in x64 kompiliert
+
+[Geändert]
+&#x2022; Defaults: #IsC2D_Time = 0 (da <i>auch</i> negative Werte bei x86 API-Timer)
+&#x2022; Defaults: #IsC2D_Music = #F_MMP
+&#x2022; Ball3D: Fehler bei ungültiger Ballgröße < 1 korrigiert 
+&#x2022; NetWork: NetWorkInit() Konvertierung von unsicheren Zeichen
+&#x2022; XUnPack: Flag-Bezeichnung von #F_ nach #XUP_ geändert
+&#x2022; XUnPack: #XUP_SQSH xupSQSH.lib Header-Check (x86-64)
+&#x2022; Music: #F_ST3 playST3.lib erneuert auf v0.97 (x64)
+&#x2022; Music: #F_ST3 playST3.lib v0.91 Waveout von v0.97 übernommen (x86)
+&#x2022; Stars2D: Startpositionen jeweils mit Zufallswert von X zu Y & %1111
+&#x2022; Stars3D: Beschleunigte Darstellung
+&#x2022; Copper: Intern änderbare x-Position für CopperDraw(), CopperMoveDraw()
+&#x2022; GDIPlus: GDIP_CatchImage() umbenannt in GdipCatch()
+&#x2022; GDIPlus: GdipCatch() global deklariert wenn #IsC2D_GdiPlus aktiv ist
+&#x2022; Tools: AmpInstaller erneuert AmpMaster_x86.dll auf v1.19.12.1
+&#x2022; Tools: AmpInstaller erneuert in_sidplay2.dll auf v2.15
+&#x2022; Tools: Ball3D Editor Größenverhältnis Fenster / Desktop optimiert
+&#x2022; Tools: UPX erneuert auf v3.96
+&#x2022; Tools: UPX Batch Drag & Drop löscht temporäre Datei
+&#x2022; Tools: UPX Batch Drag & Drop unterscheidet *.exe / *.dll
+&#x2022; Macro: MA_RMP() schnellere Ermittlung eines &#xB1;Zufallswert
+&#x2022; Hilfe: Tag-Fehler vollständig korrigiert
+&#x2022; Hilfe: Einige Beispiel-Bilder eingefügt
+&#x2022; Demos: UnitA Logo wird mit Pixel3D rotiert
+&#x2022; Demos: Fairlight '©97 JuiCe/PHaSe^D 99% cover' FLT - CRaCKTRo.thx (x86-64)
+&#x2022; Demos: Quartex Ampli - 7 Gates Of Jambala (Peace edit x64).xm (x64)
+&#x2022; Beispiele überarbeitet (False/True AntiVir Fehlermeldungen reduziert)
+&#x2022; Ausführbare Dateien mit FASM v1.73.21 assembliert
+
+[Ersetzt]
+- <span style="color:#FF0000">XUnPack: Include ersetzt durch eigenständiges Module (XUP::)</span></div>
+
+<p>05.08.2019 - v0.4 beta</p><div>[Neu]
++ Anim: AnimCopy() erstellt Kopie einer Animation (gleiche FrameIDs)
++ XUnPack: Unterstützt Ent-/Packer für BriefLZ und aPLib
++ XUnPack: XUnPackCheckSum() ermittelt PX20 kodierten 16 Bit Schlüssel
++ XUnPack: XUnPackLoad() privat, einlesen einer Datei mit Header-Test
++ Sources: Music-/Pack-Libs an Code::Blocks angepasst / hinzugefügt
++ Hilfe: Tabelle für XUnPack Flags
+
+[Geändert]
+&#x2022; Music: #F_FC4 playFC4.lib erneuert auf v1.26a (x86-64)
+&#x2022; Music: #F_FT2 playFT2.lib erneuert auf v1.02 (x86-64)
+&#x2022; Music: #F_ST3 playST3.lib erneuert auf v0.94a (x64)
+&#x2022; Music: #F_AHX playAHX.lib v0.27 (x86-64) mit MinGW/GCC kompiliert
+&#x2022; Music: #F_ST3 playST3.lib v0.91 (x86) mit MinGW/GCC kompiliert
+&#x2022; XUnPack: XUnPackID() Datenzeiger als optionaler Parameter
+&#x2022; XUnPack: XUnPackUnpack/CalcPassKey/CheckSum() Passwort-Parameter als String
+&#x2022; XUnPack: XUnPackUnpack() Passwort-Parameter als String
+&#x2022; Demos: Democide mit Coin-Animation
+&#x2022; Sources mit Purebasic v5.70 LTS x86-64 (UTF-8) erstellt
+&#x2022; Ausführbare Dateien mit FASM v1.73.16 assembliert</div>
+
+<p>02.05.2019 - v0.3 beta</p><div>[Neu]
++ NetWork: Include für Online-Dateien
++ XUnPack: Ent-/Pack-Module für PowerPacker (+PX20), FImp, Xpk, BZip2, GZip
++ Ball3D: Ball3DAnim() ersetzt eine BallID mit einer Animation
++ File: FileSave() Datenbereich in Datei speichern
++ Hilfe: Lizenz für Replayer hinzugefügt
++ Demos: Democide
+
+[Geändert]
+&#x2022; File: FileLoad() zusätzliches Flag zur Löschung des statischen Speichers
+&#x2022; File: FilePath() unterstützt Online-Pfad
+&#x2022; Music: #F_FC4 playFC4.lib erneuert auf v1.26 (x86-64)
+&#x2022; Music: #F_FC4 interne Korrektur der Static Funktionen
+&#x2022; Music: #F_FT2 playFT2.lib erneuert auf v1.01 (x86-64)
+&#x2022; Music: #F_PT2 playPT2.lib erneuert auf v1.55 (x86-64)
+&#x2022; Music: #F_ST3 playST3.lib erneuert auf v0.94 (x64)
+&#x2022; Examples: PageText_Xenon verwendet Online-Dateien (NetWork/XUnPack)
+&#x2022; Hilfe: Tag-Fehler korrigiert
+&#x2022; Tools: AmpMaster verwendet das NetWork Module
+&#x2022; Ausführbare Dateien mit FASM v1.73.11 assembliert
+
+[Entfernt]
+- Native Anweisungen für Weltnetz entfernt (~170 KB kleinere *.exe)</div>
+
+<p>18.03.2019 - v0.2 beta</p><div>[Neu]
++ Module: Projekt-Datei erstellt (Include\C2D_Main.pbp)
++ Ball3D: Ball3DInit() unterstützt @Dateiname
++ Bitmap: #IsC2D_Bitmap = 2 Erweiterung für Bilder
++ Bitmap: BitmapScroll() Bild horizontal / vertikal endlos verschieben
++ Buffer: #IsC2D_Buffer = 2 Erweiterung für CanvasBuffer
++ Buffer: BufferBackScroll() BackBuffer horizontal / vertikal verschieben
++ Buffer: BufferNoise() TV-Rauschen simulieren
++ File: FilePath() Standardpfad für Dateizugriffe
++ FontRaw: unterstützt Amiga Raw Fonts mit / ohne Header bis zu 64 Bits
++ Line3D: Line3DColor() unterstützt #PB_All
++ Line3D: Line3DFog() unterstützt #PB_All
++ Line3D: Line3DInit() optionaler Tiefen-Parameter (z)
++ Line3D: Line3DInit() unterstützt @Dateiname
++ Music: #F_(AHX,FC4,FT2,PT2,ST3) static libs für x64
++ Music: #F_TSR für *.sid Musik (wie #F_SID masm32.lib wird nicht benötigt)
++ PageText: #IsC2D_PageText = 2 Erweiterung für Text-Effekte
++ PageText: Text-Effekt Steuer-Code "{#F_Font,#FontID}"
++ ScrollText: #IsC2D_ScrollText = 2 Erweiterung für Text-Effekte
++ ScrollText: ScrollTextPos() ermittelt / setzt Position
++ ScrollText: ScrollTextSinus() vertikale Sinus-Schwingung
++ ScrollText: Text-Effekte über integrierbare Steuer-Codes "{Code,Param.f}"
++ SysFont: SysFontHD(ID) Rückgabe der nativen FontID()
++ Text: TextInit() optionale Flags für Standardpositionierung
++ Macros: MA_GSinI & MA_GCosI für Integer-Parameter
++ Beispiele: BitmapScroll(), BufferNoise(), Guru
++ Amiga: Font2Raw (F2R) gepatcht F2RLcase / F2RUcase & C2D String
+
+[Geändert]
+&#x2022; Ball3D: benötigt nicht mehr das Bitmap-Module
+&#x2022; Ball3D: Ball3DCatchTheme() / Ball3DLoadTheme() Parameter BallID entfernt
+&#x2022; Ball3D: Ball3DSetImage() Bildnummer als Parameter erwartet (nicht Bitmap)
+&#x2022; Ball3D: Ball3DExplode() benötigt keine dauerhafte Überprüfung
+&#x2022; Buffer: BufferSinX() / BufferSinY() Parametertausch Height / Width mit Speed
+&#x2022; Buffer: BufferSinY() keine Überschreitung des Grafikspeichers
+&#x2022; FontRaw: letzter Pixel des Font wird dargestellt
+&#x2022; Music: #F_(AHX,FC4,PT2) Stereo-Separation (Amiga Hard-Pan)
+&#x2022; Music: #F_(AHX,FC4,FT2,PT2,ST3) static libs erstellt mit Code::Blocks (size optimized)
+&#x2022; Music: #F_ST3 static playST3.lib (x86-64) erneuert auf v0.91 (x86) / 0.93 (x64)
+&#x2022; Music: #F_ST3 Fehler in Parameterübergabe korrigiert
+&#x2022; Music: #F_FT2 static playFT2.lib (x86-64) erneuert auf v1.00
+&#x2022; Music: #F_FT2 unterstützt das FastTracker2 Format (xm)
+&#x2022; Music: #F_FC4 static playFC4.lib (x86-64) erneuert auf v1.25
+&#x2022; Music: #F_PT2 static playPT2.lib (x86-64) erneuert auf v1.54
+&#x2022; Music: #F_SID Verwendung der kürzeren titchysid.lib v1.2b (x86 no extras)
+&#x2022; Gdiplus: Funktionen importiert (Import "gdiplus.lib)
+&#x2022; PageText: etwas beschleunigt, Konstanten für Effekte umbenannt
+&#x2022; SysFont: unterstützt Purebasic < v5.50 x86-64
+&#x2022; Demos: WildCopper mit ripped BitmapFonts, Rocket- & Satelite-Objekt
+&#x2022; Tools: PureCompile optional UPX_x64.exe als Standard
+&#x2022; Tools: Ball3D_Editor & Line3D_Editor erweitert
+&#x2022; Tools: FontRaw_Create, FontRaw_Preview überarbeitet
+&#x2022; Effekte und Compiler-Anweisungen angeglichen
+&#x2022; Allgemeine Überarbeitung / Anpassung der Sources
+&#x2022; Ausführbare Dateien mit FASM v1.73.09 assembliert
+
+[Entfernt]
+- Music: #F_PTK (Protrekkr) entfernt da Musikwiedergabe nur mit WinXP?
+- ScrollText: ScrollTextFX() entfernt, ersetzt über "{Code,Param.f}"
+<span style="color:#FF0000">&#xD8; SinusText: vollständig entfernt, ersetzt durch ScrollTextSinus()!</span></div>
+
+<p>06.01.2019 - v0.1 beta</p><div>&#x2022; Vollständig überarbeitet
+&#x2022; Erstveröffentlichung als OpenSource</div>
+
+<p>01.10.2017</p><div>&#x2022; Source in Purebasic v5.40 x86 (AscII) an v5.62 x86-64 (UTF-8) angepasst</div>
+</pre></body>
+</html>

@@ -1,0 +1,103 @@
+<table style="FONT-SIZE:9pt; FONT-FAMILY: Courier New; WIDTH: 98%; BORDER-COLLAPSE: collapse" border="1">
+
+<tr style="COLOR: #000000; BACKGROUND-COLOR: #ffffa0">
+<th style="WIDTH: 45%">#IsC2D_Anim = 1</th><th>Animation</th>
+</tr>
+
+<tr>
+<td>AnimCopper(ID, *Memory.Long, Flags=0)</td><td>Belegt alle Frames mit einem Copper-Farbverlauf.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>AnimCopy(ID, NewID, Flags=0)</td><td>Erstellt eine Kopie der Animation ID nach NewID. Flags = 0 beide Animationen verwenden die gleichen Frames um Speicher zu sparen. Flags = 1 es werden separate Frames erstellt für individuelle Größenveränderungen. Wird für NewID = #PB_Any übergeben, ist der Rückgabewert die neue ID.</td>
+</tr>
+
+<tr>
+<td>AnimCount(ID)</td><td>= Ermittelt die Frame-Anzahl der Animation ID. Die Zählung ist beginnend bei 0 (n-1).</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>AnimDelay(ID, Time, FrameID=#PB_All)</td><td>Wiedergabegeschwindigkeit, Time = Dauer in Millisekunden. Über FrameID kann die Anzeigedauer eines einzelnen Frame festgelegt werden.</td>
+</tr>
+
+<tr>
+<td>AnimDirection(ID, Frames)</td><td>Vor- oder Rückwärts abspielen, Frames bestimmt die Schrittanzahl (Beispiel: 3 = nur jedes dritte Frame wird angezeigt, -2 = nur jedes zweite Frame wird von rückwärts angezeigt)</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>AnimDraw(ID, x.f, y.f, Alpha=255, Flags=0)</td><td>= Darstellung einer Animation. Rückgabewert = #Aktuelles Frame<tr></td>
+</tr>
+
+<tr>
+<td>AnimFlip(ID, Flags=0)</td><td>Spiegelt alle Frames einer Animation horizontal (Flags = 0) oder vertikal (Flags = #C2DF_Vertical)</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>AnimFrame(ID, FrameID=#PB_Default)</td><td>= Setzt das aktuelle Frame-Bild bzw. #PB_Default = ermittelt das aktuelle #Frame</td>
+</tr>
+
+<tr>
+<td>AnimFree(ID)</td><td>Löscht eine- oder alle Animationen (ID = #PB_All)</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>AnimH(ID)</td><td>= #Pixel-Höhe</td>
+</tr>
+
+<tr>
+<td>AnimInit(ID, Image, x, y, Frames=#PB_All)</td><td>Intialisiert eine Animation. x und y bestimmen die Anzahl horizontaler (x) und vertikaler (y) Frame-Bilder. Über Frames kann die maximale Frame-Anzahl variiert werden. Wird für die Initialisierung #PB_Any übergeben, ist der Rückgabewert die neue ID.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>AnimPause(ID, State=1)</td><td>Pausieren (1) oder Pause beenden (0)</td>
+</tr>
+
+<tr>
+<td>AnimPingPong(ID, Mode=1)</td><td>Am ende Animation rückwärts abspielen (ping-pong). Mode = 0 schaltet die Option wieder aus.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>AnimPlayDraw(ID, x.f, y.f, w=#PB_Default, h=#PB_Default)</td><td>= Wiederholungen bis ende. Spielt eine Animation an Position x, y mit der Pixelgröße w, h ab. Die Wiederholung entspricht dem Parameter Count bei AnimPlayStart().</td>
+</tr>
+
+<tr>
+<td>AnimPlayStart(ID, Count=1)</td><td>Initiert das Abspielen einer Animation. Der Parameter Count bestimmt die Anzahl der Wiederholungen. Nach "Count" Wiederholungen wird die Animation nicht mehr über AnimPlayDraw() dargestellt.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>AnimRange(ID, FrameID, Number)</td><td>Legt das FrameID=Startframe und die Number=Anzahl der wiederzugebenden Frames fest.</td>
+</tr>
+
+<tr>
+<td>AnimScale(ID, Ratio.f)</td><td>Proportionale Größenveränderung (Ratio = 1.0 &#x2259; 100%)</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>AnimSeen(ID)</td><td>= #True wenn sich die Animation mit der Kennung ID im sichtbaren Bereich des Canvas befindet.</td>
+</tr>
+
+<tr>
+<td>AnimW(ID)</td><td>= #Pixel-Breite</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>AnimX(ID)</td><td>= Horizontale Position.f der Animation mit der Kennung ID.</td>
+</tr>
+
+<tr>
+<td>AnimY(ID)</td><td>= Vertikale Position.f der Animation.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>AnimZone(ID, x.f, y.f)</td><td>= #True wenn sich die Position von x / y (z.B. Maus-Koordinaten) innerhalb der Animation mit der Kennung ID befindet.</td>
+</tr>
+
+<tr>
+<td>AnimZoom(ID, w=#PB_Default, h=#PB_Default)</td><td>Größenveränderung in Pixel.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>IsAnim(ID)</td><td>= Listeneintrag, #Null = Fehler</td>
+</tr>
+
+</table>

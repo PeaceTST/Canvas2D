@@ -1,0 +1,89 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Init</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+</style>
+
+</head>
+
+<body>
+<H3 align=center>C2D::Init()</H3>
+<P align=left><STRONG>Syntax</STRONG></P>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+  <P align=left><STRONG><FONT color=#008080>C2D::Init</FONT></STRONG>(#Gadget, Speed=5, Color.l=#Black)</P></BLOCKQUOTE>
+<P dir=ltr align=left><STRONG>Beschreibung</STRONG></P>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+  <P dir=ltr align=left>Initialisiert ein zuvor definiertes 
+  CanvasGadget für weitere grafische Darstellungen.<BR>    
+      <BR><STRONG>Wichtig</STRONG>    
+      : Dieser Befehl muss vor allen anderen Anweisungen als 
+  erstes aufgerufen werden.</P></BLOCKQUOTE>
+<P dir=ltr align=left><STRONG>Parameter</STRONG></P>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+  <P dir=ltr align=left>
+  <TABLE style="WIDTH: 80%; BORDER-COLLAPSE: collapse" borderColor=#000000 
+  cellSpacing=0 cellPadding=2 width="80%" border=1>
+    
+    <TR>
+      <TD width="20%">&nbsp;#Gadget</TD>
+      <TD>&nbsp;Nummer des zuvor erstellten CanvasGadget</TD></TR>
+    <TR>
+      <TD width="20%">&nbsp;Speed</TD>
+      <TD>&nbsp;Wartezeit in Millisekunden für das Neuzeichnen. Standard ist 5 Millisekunden.</TD></TR>
+    <TR>
+      <TD width="20%">&nbsp;Color.l</TD>
+      <TD>&nbsp;Hintergrundfarbe. Standard ist 
+    Schwarz.</TD></TR></TABLE></P></BLOCKQUOTE>
+  <P dir=ltr align=left><STRONG>Rückgabewert</STRONG></P>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+  <P dir=ltr align=left>
+  Diese Funktion gibt keinen Wert 
+  zurück.</P></BLOCKQUOTE>
+  <P dir=ltr align=left><STRONG>Anmerkung</STRONG></P>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+  <P dir=ltr align=left>
+  Erst nach&nbsp;<A 
+  href="Init.htm">C2D::Init()</A>
+    
+  können weitere Canvas 2D 
+  Funktionen aufgerufen werden.</P></BLOCKQUOTE>
+  <P dir=ltr align=left><STRONG>Beispiel</STRONG>
+      
+    </P>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+  <P dir=ltr align=left>
+  <TABLE style="WIDTH: 80%; BORDER-COLLAPSE: collapse" borderColor=#000000 
+  cellSpacing=4 cellPadding=2 width="80%" bgColor=#ffffb9 border=0>
+    
+    <TR>
+      <TD>
+        <P><FONT size=2 face=Courier>XIncludeFile&nbsp;"..\Include\C2D_Module.pbi"<BR><BR>#SCR_Z&nbsp;=&nbsp;1.25<BR>#SCR_W&nbsp;=&nbsp;512&nbsp;*&nbsp;#SCR_Z<BR>#SCR_H&nbsp;=&nbsp;#SCR_W&nbsp;*&nbsp;0.6</FONT></P>
+        <P><FONT size=2 face=Courier>#G_C2D&nbsp;=&nbsp;0</FONT></P>
+        <P><FONT size=2 face=Courier>OpenWindow(0, 0, 0, #SCR_W, #SCR_H, 
+        "Font/Text", 
+        #PB_Window_SystemMenu|#PB_Window_ScreenCentered)<BR>CanvasGadget(#G_C2D, 
+        0, 0, #SCR_W, #SCR_H)&nbsp;:&nbsp;DisableGadget(#G_C2D, 1)</FONT></P>
+        <P><FONT size=2 face=Courier><STRONG><FONT color=#ff0000>C2D::Init</FONT></STRONG>(#G_C2D)</FONT></P>
+        <P><FONT size=2 face=Courier>C2D::FontRawInit(0)<BR>C2D::FontZoom(0, 16 * 
+        #SCR_Z, 24 * #SCR_Z)<BR>C2D::FontColor(0, $0FB9FF)</FONT></P>
+        <P><FONT size=2 face=Courier>C2D::TextSinusInit(0, 0, PeekS(?l_Text), 
+        15, 80 * #SCR_Z)</FONT></P>
+        <P><FONT size=2 face=Courier>y&nbsp;=&nbsp;(#SCR_H&nbsp;-&nbsp;C2D::TextH(0))&nbsp;*&nbsp;0.5</FONT></P>
+        <P><FONT size=2 face=Courier>Repeat<BR>&nbsp;Select&nbsp;WindowEvent()<BR>&nbsp;&nbsp;Case&nbsp;#Null<BR>&nbsp;&nbsp;&nbsp;If&nbsp;C2D::Start()<BR>&nbsp;&nbsp;&nbsp;&nbsp;C2D::TextSinusDraw(0, 
+        y, 0.8 * 
+        #SCR_Z)<BR>&nbsp;&nbsp;&nbsp;&nbsp;C2D::Stop()<BR>&nbsp;&nbsp;&nbsp;Else<BR>&nbsp;&nbsp;&nbsp;&nbsp;Delay(1)<BR>&nbsp;&nbsp;&nbsp;EndIf<BR>&nbsp;&nbsp;Case&nbsp;#PB_Event_CloseWindow<BR>&nbsp;&nbsp;&nbsp;Break<BR>&nbsp;EndSelect<BR>ForEver</FONT></P>
+        <P><FONT size=2 face=Courier>C2D::Free()</FONT></P>
+        <P><FONT size=2 face=Courier>DataSection<BR> 
+        &nbsp;l_Text:&nbsp;:&nbsp;Data.s&nbsp;"THIS IS AN TEXT-SCROLLER EXAMPLE BY CANVAS 
+        2D"<BR>EndDataSection</FONT></P></TD></TR></TABLE>
+      
+    </P></BLOCKQUOTE></body>
+</html>

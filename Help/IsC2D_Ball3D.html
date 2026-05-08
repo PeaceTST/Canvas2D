@@ -1,0 +1,75 @@
+<table style="font-size:9pt; font-family:courier new; width:98%; border-collapse:collapse" border="1">
+
+<tr style="color:#000000;background-color:#ffffa0">
+<th style="width:45%">#IsC2D_Ball3D = 1</th><th>Ball3D Objekt</th>
+</tr>
+
+<tr>
+<td>IsBall3D(ID)</td><td>= Listeneintrag, #Null = Fehler</td>
+</tr>
+
+<tr style="color:#000000;background-color:#f2f2f2">
+<td>Ball3DAngle(ID, x.f, y.f, z.f)</td><td>Blickwinkel auf ein Objekt.</td>
+</tr>
+
+<tr>
+<td>Ball3DCatchTheme(*Memory.Integer)</td><td>Ball-Grafik für Objekte bereitstellen. *Memory = Tabelle mit Zeigern auf Grafikdaten (s. <a href="Table_Ball3D.htm">Tabelle</a>).</td>
+</tr>
+
+<tr style="color:#000000;background-color:#f2f2f2">
+<td>Ball3DCount(ID)</td><td>= #Anzahl der tatsächlich erstellten Bob-Bilder.</td>
+</tr>
+
+<tr>
+<td>Ball3DDefaultTheme(*Memory.Long=0)</td><td>Erstellt BallBobs in Standardfarben (*Memory=0) oder eigener Färbung (*Memory=@Color.l[8])</td>
+</tr>
+
+<tr style="color:#000000;background-color:#f2f2f2">
+<td>Ball3DDraw(ID, x.f=0, y.f=0, Alpha=255, Fade=0)</td><td>= Darstellung eines Ball3D-Objekt ausgehend vom Mittelpunkt des Canvas, Fade = Tiefenwirkung über Nebelsimulation (0 = aus &#x2026; 255 = dicht). Rückgabewert = #Anzahl der sichtbaren BallBobs.</td>
+</tr>
+
+<tr>
+<td>Ball3DFree(ID)</td><td>Löscht ein- oder alle Objekte (ID = #PB_All)</td>
+</tr>
+
+<tr style="color:#000000;background-color:#f2f2f2">
+<td>Ball3DImage(BallID, Image=-1)</td><td>= #Nummer des Ball-Bildes (ID = 0 &#x2026; 7), #Null = Fehler. Um ein Ball-Bild mit einem Bild auszutauschen muss bei Image eine gültige Bildnummer übergeben werden.</td>
+</tr>
+
+<tr>
+<td>Ball3DInit(ID, *Memory, Size, Gap.f=1.0)</td><td>= Erstellt ein Objekt aus den Daten in *Memory oder aus @Dateiname (#IsC2D_File muss hierzu aktiviert sein). Size = Größe des Objekts (1.0 &#x2259; 100%), Gab = prozentualer Abstand zwischen einzelnen Bobs (1.0 &#x2259; 100% = Standard). Rückgabewert = #Anzahl der erstellten Bob-Bilder.</td>
+</tr>
+
+<tr style="color:#000000;background-color:#f2f2f2">
+<td>Ball3DRotate(ID, x.f, y.f, z.f)</td><td>Rotiert ein Objekt.</td>
+</tr>
+
+<tr>
+<td>Ball3DSpin(ID, Factor.f, BallID=#PB_All)</td><td>Eigenrotation eines- oder aller BallBobs eines Objekt.</td>
+</tr>
+
+<tr style="color:#000000;background-color:#f2f2f2">
+<td>Ball3DLoadTheme(Path$, Format$="png")</td><td><b>#IsC2D_File</b> muss aktiviert sein! Lädt Bilder für Ball-Grafiken, Format$ = Bildformat ("bmp","png"&#x2026;). Dateinamen müssen entsprechend der Angabe Format$ = "png" in der Datei-Bezeichnung: 0.png &#x2026; 7.png vorliegen (s. <a href="Table_Ball3D.htm">Tabelle</a>).</td>
+</tr>
+
+<tr style="color:#000000;background-color:#ffffa0">
+<th>#IsC2D_Ball3D = 2</th><th>Erweiterung</th>
+</tr>
+
+<tr>
+<td>Ball3DAnim(ID, AnimID, BallID)</td><td>Ersetzt eine BallID nit einer zuvor initialisierten <a href="IsC2D_Anim.html">Animation</a> (#IsC2D_Anim muss aktiviert sein)</td>
+</tr>
+
+<tr style="color:#000000;background-color:#f2f2f2">
+<td>Ball3DExplode(ID, Factor)</td><td>Explosion eines Objekt. Factor = 1 oder 2 für Streuungs-Bewegung bis zur erneuten Zusammensetzung.</td>
+</tr>
+
+<tr>
+<td>Ball3DMerge(ID1, ID2)</td><td>Vereint das Objekt ID2 in ID1.</td>
+</tr>
+
+<tr style="color:#000000;background-color:#f2f2f2">
+<td>Ball3DStars(ID, Number, Radius, Size, BallID=3, Rnd.f=0)</td><td>Erstellt ein statisches 3D-Sternenfeld, Rnd = Streuungsfaktor.</td>
+</tr>
+
+</table>
