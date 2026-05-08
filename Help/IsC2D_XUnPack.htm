@@ -1,0 +1,63 @@
+<table style="border-collapse:collapse;width:98%;font-family:Courier New;font-size:9pt;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_XUnPack | #XUP_(MODE..)</th><th style="width:55%;">Entpackt / Dekodiert einen Speicherbereich</th>
+</tr>
+
+<tr>
+<td>XUP::Buffer()</td><td>= Entpackter *Datenspeicher, #Null = Fehler</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>XUP::Free()</td><td>Löscht den entpackten *Datenspeicher und entsprechende Strukturwerte.</td>
+</tr>
+
+<tr>
+<td>XUP::ID(*Memory.RS_Union=0)</td><td>= Identifikation #ID_(Mode) des Packformats der <b>entpackten</b> Daten bzw. des Datenzeiger (*Memory)</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>XUP::Unpack(*Memory.RS_XPK, Length=0, Password$=#Null$)</td><td>= *Datenspeicher, #Null = Fehler. Entpackt *Memory mit der Größe Length. Mittels Password$ kann zusätzlich ein PowerPacker (PX20) verschlüsselter *Datenspeicher dekodiert werden. Unterstützt werden derzeit die Amiga Packformate: XPKF Compressors (BZP2 | NONE | IMPL | PWPK | SQSH | GZIP), FImp (IMP!, ATN! + Clones) sowie PowerPacker (PP20 | PPBk | PPLS | PX20). Ebenso die Atari Packformate Atomik 3.5, Ice! 2.1 & 2.4 (UICE). BriefLZ, BZip2, LZMA, Zip bzw. GZip als komprimierte Rohdaten (kein Archiv-Format). Der Ent-/Packer JCalG1 (JCG1) ist nur auf x86 verfügbar. Entsprechende Include-Flags können in <a href="Table_XUnPack.htm">Tabelle</a> eingesehen werden.</td>
+</tr>
+
+<tr>
+<td>XUP::Mode(*Memory.RS_XPK)</td><td>= #ID_(Mode), Identifizierung des verwendeten Packers für *Memory. #Null = Fehler bzw. Daten in *Memory sind nicht- oder unbekannt gepackt.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>XUP::Size()</td><td>= Größe des zuvor entpackten *Datenspeicher, #Null = Fehler</td>
+</tr>
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_XUnPack | #XUP_PX20</th><th style="width:55%;">*Datenspeicher mit unbekannten Passwort</th>
+</tr>
+
+<tr>
+<td>XUP::PX20CalcCheckSum(Password$)</td><td>= Ermittelt einen 16 Bit (Word) Schlüssel für Password$ welches für eigene Verfahren einer Dekodierung verwendet werden kann. Ein gültiges Passwort kann wie folgt überprüft werden: If PeekW(*Memory + 4) = XUnPackCalcCheckSum(Password$)&#x2026;</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>XUP::PX20CheckSum(*Memory.RS_Union)</td><td>= Ermittelt den 16 Bit (Word) Schlüssel des in *Memory angegebenen Datenzeiger.</td>
+</tr>
+
+<tr>
+<td>XUP::PX20CalcPassKey(Password$)</td><td>= Ermittelt einen 32 Bit (Long) Schlüssel für Password$.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>XUP::PX20Decode(*Memory.Long, Length, PassKey.q, BruteStep=1, *CallBack=#Null)</td><td>= *Datenspeicher, #Null = Fehler. Dekodiert <b>*Memory</b> mit Daten in einer PowerPacker (PX20) Verschlüsselung mittels Brute-Force-PassKey. <b>Length</b> = Größe von *Memory. <b>PassKey</b> = Startschlüssel, dieser muss zwischen $0 &#x2026; $FFFFFFFF angegeben werden. <b>BruteStep</b> bestimmt die Schrittgröße zum nächsten PassKey, mit der Größe steigt die Geschwindigkeit- jedoch sinkt proportional die Wahrscheinlichkeit den entsprechenden PassKey zu ermitteln (100% / BruteStep). <b>*CallBack</b> muss bei Angabe ein Zeiger auf eine @Procedure(Param) sein. Der Parameter Param hat den Wert des aktuell überprüften PassKey. Ist der Rückgabewert von @Procedure(Param) &#x2260; #Null wird das Dekodieren abgebrochen. Aufgrund der Überprüfung von rund 4.3 Milliarden Möglichkeiten kann ein ermitteln des PassKey etwas dauern, dafür wird jedoch ein kodierter Speicherbereich garantiert dekodiert und entpackt (PassKey=$0, BruteStep=1 &#x2026; <i>na dann, gute nacht</i>)!</td>
+</tr>
+
+<tr>
+<td>XUP::PX20PassKey()</td><td>= 32 Bit (Long) Schlüssel welcher bei erfolgreicher Dekodierung verwendet wurde, #Null = Fehler.</td>
+</tr>
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_XUnPack | #XUP_PACK | #XUP_(BLZ1,BZP2,GZIP,FIMP,LZMA,JCG1)</th><th style="width:55%;">*Datenbereich packen</th>
+</tr>
+
+<tr>
+<td>XUP::Pack(*Memory, Length=0, Level=9, Mode=#XUP_LZMA)</td><td>= Gepackter *Datenbereich, #Null = Fehler. <b>*Memory</b> = *Datenbereich, <b>Length</b> = Größe von *Memory, <b>Level</b> = Kompressions-Stärke von 1 &#x2026; 9, diese sollte auf 9 belassen werden da durchschnittlich beste Kompressionsergebnisse, <b>Mode</b> = Kompressor #XUP_(BLZ1, BZP2, GZIP, FIMP, LZMA, JCG1). Die gepackte Größe kann über MemorySize(*Datenbereich) ermittelt werden. Derzeit werden APLib, BriefLZ, BZip2, GZip, LZMA, JCalG1 (x86) und FImp (Amiga FileImploder ATN!) unterstützt. BZip2 hat die höchste Kompressionsdichte, im Vergleich sind mit GZip gepackte Daten um ~5% größer, FImp sollte nur ab Level = 8 verwendet werden, da ohnehin eine sehr schwache Ratio bei extremer Kompressionsdauer, JCalG1 ist nur auf x86 verfügbar!</td>
+</tr>
+
+</table>

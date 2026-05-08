@@ -1,0 +1,91 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Info</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+</style>
+
+</head>
+
+<body>
+
+<table style="border-collapse:collapse;width:98%;font-family: Arial, Helvetica, sans-serif;font-size: 10pt;">
+<tr>
+	<td>
+<h4>Kurzinformation zu Canvas2D (C2D)</h4>
+
+<p style="text-align:justify;">C2D ist ein Module für Purebasic welches bereits vor einiger Zeit für den <u>privaten</u> Bedarf entstand, seither dauerhaft im ß-Status vorliegt und diesen wohl niemals verlassen will. Ursprüngliche Idee war für eine frühe Version der AmpMaster_x86.dll einen Info-Requester mit typischen Oldskool-Effekt zu versehen, jedoch ohne Screen, Sprites, DirectX, GL etc., naja, wie es sich so ergibt entsteht gleich ein eigenes Konzept und der Requester ist nach wie vor... unverändert.</p>
+
+<p style="text-align:justify;font-weight:bold">C2D ist also ein OpenSource Module für Purebasic welches bei Interesse die Möglichkeit bietet in einem CanvasGadget 2D Grafik-Effekte darzustellen.</p>
+
+<p style="text-align:center;background:#000000;"><IMG style="width:19%;" src="Pics/Angels.png"> <IMG style="width:19%;" src="Pics/Megaforce.png"> <IMG style="width:19%;" src="Pics/SkidRow.png"> <IMG style="width:19%;" src="Pics/Crystal.png"> <IMG style="width:19%;" src="Pics/VF.png"></p>
+
+<p style="text-align:justify;">Nun denn, Purebasic inkludiert alle deklarierten Proceduren eines Module standardmäßig während dem kompilieren unabhängig deren Verwendung. Dieses könnte zu übergroßen Ausgaben führen aufgrund vom im Programmablauf nicht verwendeter Funktionen. Um eine kompilierte Datei*.exe dennoch mit C2D kleinstmöglich zu erstellen, können auf fast einfache Weise jeweilige C2D-Effekte über Compiler-Anweisungen einzeln aktiviert werden. Hierzu sind diese über #Konstanten-Definitionen ( <code style="color:#8b0000;">#IsC2D_<i>(Effekt)</i></code> = on / off ) vor dem Hauptprogramm zu definieren über die der Compiler die Anweisungen erhällt welche Effekte während dem kompilieren zu installieren sind ( = True ) und welcher eben nicht ( = False ).</p>
+
+<p style="text-align:justify;">Jedes C2D Programm beginnt daher mit einem zu erstellenden <b>IsC2D</b> Module indem jeweiliger Befehlssatz über #Konstanten-Definition aktiviert wird welcher im Programm dann auch nur eingebunden ist. Sollte beispielsweise nur eine Animation mit Musik abgespielt werden, wäre folgendes <b>IsC2D</b> Module zu deklarieren:</p>
+
+<pre style="font-size:9pt;background-color:#ffffc7;margin-left:24px;margin-right:60%;padding-left:8px;padding-right:8px;">
+
+<span style="COLOR: #008b8b">; *** Schaltzentrale für C2D ***</span>
+<span style="COLOR: #0000ff">DeclareModule</span> <b>IsC2D</b>
+
+   <span style="color:#0000FF;">XIncludeFile</span> "<i>..\Include\C2D_Types.pbi</i>"
+
+   <span style="COLOR: #8b0000">#IsC2D_Anim</span>  = 1
+   <span style="COLOR: #8b0000">#IsC2D_Music</span> = <span style="COLOR: #8b0000">#XMU_SCA</span>
+
+   <span style="COLOR: #0000ff">XIncludeFile</span> "<i>..\Include\C2D_Defaults.pbi</i>"
+
+<span style="COLOR: #0000ff">EndDeclareModule</span>
+
+<span style="COLOR: #0000ff">XIncludeFile</span> "<i>..\Include\C2D_Module.pbi</i>"
+
+<span style="COLOR: #008b8b">; *** Dein Programm startet ab hier... ***</span>
+
+</pre>
+
+<p style="text-align:justify;">Zu beachten sind die jeweils <u>innerhalb</u> des <b>IsC2D</b> Module eingefügten Dateien <code style="background:#ffffc7;"><span style="color:#0000ff">XIncludeFile</span> "..\Include\C2D_Types.pbi"</code> welche für die Musikunterstützung entsprechende Format-Konstanten beinhaltet (<code style="color:#8b0000;">#XMU_SCA</code>). Unterstützte Musik-Formate sind <a href="Table_Music.htm">hier</a> aufgelistet. <code style="background:#ffffc7;"><span style="color:#0000ff;">XIncludeFile</span> "..\Include\C2D_Defaults.pbi"</code> fügt alle nicht definierten-, jedoch vom Haupt-Modul überprüften Compiler-Anweisungen <code style="color:#8b0000;">#IsC2D_(Effekt)</code> hinzu ohne diese jeweils neu zu deklarieren.</p>
+
+<p>Das zu erstellende <b>IsC2D</b> Module ist somit als eine "<i>Schaltzentrale</i>" für ein optimiertes <b>C2D</b> Module zu betrachten.</p>
+
+<p style="text-align:justify;">Erst <b style="text-decoration:underline">nach</b> dieser Programmanweisung ist das Programm-Module <code style="background:#ffffc7;"><span style="color:#0000ff;">XIncludeFile</span> "..\Include\C2D_Module.pbi"</code> <u>außerhalb</u> von <b>IsC2D</b> im Hauptprogramm einzubinden. So ist garantiert, daß wie im Beispiel dargestellt, für das kompilierte Programm nur Befehlsanweisungen für eine Animation und Musik installiert werden. Die im Beispiel angegebenen Pfade sind natürlich entsprechend anzupassen.</p>
+
+<p style="text-align:justify;">Zugegeben, die Vorgehensweise ist etwas gewöhnungsbedürftig, aber es funktioniert wenn man sich irgendwie daran gewöhnt hat. <span style="font-size:150%;">&#x1F37B;</span></p>
+
+<p style="text-align:justify;"><p style="text-align:justify;"><IMG style="FLOAT:left;MARGIN: 2px 8px 0px 0px;width:260px;" alt="BitmapScroll" src="Pics/BitmapScroll.png">Natürlich sind aufgrund der systemnahen Kompatibilität eines CanvasGadget die Möglichkeiten recht überschaubar, da alleine schon über die Anzahl und mit der Dimension von angezeigten Bitmap-Bildern die Ablaufgeschwindigkeit drastisch sinkt und es hierdurch zu Ausreißern trotz zeitgesteuerten Programmablauf führt.</p>
+
+Um dieses zu verringern können zeitkritische Darstellungen direkt in den jeweiligen Grafikspeichern des Canvas und einer Bitmap ausgeführt werden. Zum Beispiel ist ein direktes löschen des Grafikspeichers mittels <code style="color:#8b0000;">#IsC2D_Clear <span style="color:#000000;">= 2</span></code> um den Faktor ~10 zeitsparender als ein übliches verwenden des nativen Befehl <code>Box(x, y, w, h)</code>. Ein anschauliches Beispiel bietet die Funktion <code>C2D::BitmapScroll()</code> welche <a href="IsC2D_Bitmap.html">hier</a> erklärt wird bzw. das links im Bild dargestellte Beispiel unter <span style="color:#006B2B;">\Examples\C2D_Bitmap_Scroll.pb</span>.</p>
+
+<p style="text-align:justify;">Weitere erhebliche Geschwindigkeitseinbußen würden durch ein wiederholtes strecken / stauchen mittels <code>DrawImage(i, x, y, w, h)</code> entstehen, weshalb standardmäßig keine Grafiken während dem Programmablauf größenverändert werden. Um dennoch auch eine räumliche Tiefe zu simulieren, werden über den Alphakanal Grafiken in der Darstellung schwächer oder intensiver dargestellt, gewissermaßen ein bescheidener <i style="COLOR:#777777">Nebeleffekt</i>.</p>
+
+<p style="text-align:justify;FONT-SIZE:smaller;FONT-STYLE:italic">Anmerkung: Floats für Alpha reduziert die Darstellungsgeschwindigkeit erheblich!</p>
+
+<p style="text-align:justify;"><IMG style="FLOAT:left;MARGIN: 2px 8px 0px 0px;width:260px;" alt="AmpInstaller" src="Pics/AmpInstaller.png">Um eine Vielzahl an Musikformate zu unterstützen, kann über die Anweisung <code><a href="IsC2D_Music.html">#IsC2D_Music</a> = #C2D_MUSIC_(Format)</code> das abzuspielende Format definiert werden.</p>
+
+<p style="text-align:justify;">Die <span style="color:#006B2B;">AmpMaster_x86.dll</span> wird ebenfalls unterstützt da sie 944+ Extensionen erkennt und selbst exotische Musikdateien über WinAMP Plugins im original und überaus guter Qualität abspielt. Es können dann jedoch keine Musikdateien in die ausführbare <span style="color:#006B2B;">*.exe</span> Datei eingebunden werden und das Abspielen ist nur auf Windows x86 möglich. Natürlich müsste auch noch eine Erweiterung installiert werden.<p>
+
+<p style="text-align:justify;">Diesbezüglich befindet sich im Ordner <span style="color:#006B2B;">\Tools\AmpInstaller\</span> das Programm <span style="color:#006B2B;">AmpMaster_x86.exe</span> mit welchem auf einfache weise eine Online-Installation in den öffentlichen Ordner <span style="color:#006B2B;">C:\Users\Public\Documents\AmpMaster\</span> durchgeführt werden kann. Es werden <u>keine</u> Registry-Änderungen vorgenommen, weshalb das Ganze manuell jederzeit und restlos löschbar ist. Übrigens zeigt der Installer andeutungsweise den ursprünglich Sinn von C2D. Einige Beispiele verwenden dieses Verfahren, weshalb eine Installation durchaus empfehlenswert ist.</p>
+
+<p style="text-align:justify;">Da der Source zu Canvas2D seit einiger Zeit völlig sinnfrei auf der Festplatte dahin-rostete, wurde er an <span style="color:#006B2B;">Purebasic v5.62</span> UTF-8 angepasst und als OpenSource bereitgestellt. Eventuell findet jemand ein paar Zeilen daraus als nutzbar, wenn nicht, dann eventuell jemand anderes &#x1F603;</p>
+
+<p style="text-align:justify;"><IMG style="FLOAT: left; MARGIN: 2px 8px 0px 0px; width:260px;" alt="AmpInstaller" src="Pics/BootMenu.png">Wer jetzt noch immer Interesse hat, schaue sich die Beispiele im Ordner <span style="color:#006B2B;">Examples\</span> an, dort werden jeweilige Befehle praktisch erläutert (naja, die meisten).</p>
+
+<p style="text-align:justify;">Und bitte nicht vergessen, der Source wurde aus Gründen der Geschwindigkeit teilweise so strapazierend um-optimiert, daß er deutlich unübersichtlich wirkt (was tatsächlich zutrifft) und vor allem, es handelt sich um die Darstellung in einem <b style="text-decoration:underline;">CanvasGadet</b>, daher sollte der Debugger in der Testphase nach Möglichkeit ausgeschaltet bleiben. Ist der Programmablauf dennoch zu langsam, kann über die Konstante <code style="COLOR: #8b0000">#C2D_Z</code> welche in jeden Beispiel die prozentuale Darstellungsgröße festlegt (1.0 = 100%) der Programmablauf beschleunigt werden.</p>
+
+<p style="text-align:justify;">Empfehlung: Starte doch mal die Batch-Datei - <span style="color:#006B2B;">MegaDemo_x86.bat</span> - Menü-Auswahl über das Mausrad und linker Mausknopf. Die Demo-Beispiele sind übrigens nicht identisch zu den Originalen, wer will kann dieses entsprechend anpassen.</p>
+
+<p style="text-align:justify;">Eigentlich war es das, nichts was wirklich von Besonderheit wäre, hatte aber gerade Zeit zum tippen übrig. Wichtig aber wäre noch zu erwähnen, daß leider einige AntiVir Programme übertrieben empfindlich auf kompilierte Purebasic Programme reagieren. AntiViren-Tools verhalten sich zumindest etwas beruhigter wenn eine Kompilierung in einem Ordner mit Ausnahmeregel erstellt wird. Es ist also nicht zwingend ein Problem welches durch C2D verursacht wird, vielmehr die Pauschal-Heuristik dieser Schädlingsbekämpfer!</p>
+
+<p style="font-size:8pt;">Peace^TST, 14.12.2018 15:58</p>
+</td>
+</tr>
+</table>
+</body>
+</html>
