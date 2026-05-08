@@ -1,0 +1,19 @@
+<table style="font-family:Courier New;font-size:9pt;border-collapse:collapse;width:98%;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_GdiPlus = 1</th><th>Bildformate einlesen mit GDIPlus</th>
+</tr>
+
+<tr>
+<td style="text-align:left;padding-left:10px;padding-right:10px;">GdipCatch(Image, *Memory.Union, Length)</td><td style="text-align:left;padding-left:10px;padding-right:10px;">= *hBild oder #Bildnummer wenn #PB_Any für Image angegeben wurde. Einlesen / Erstellen von Bitmaps mit der Systembibliothek gdiplus.dll. Bei Verwendung werden neben dem Format *.bmp zusätzlich *.jpg, *.png, *.tif, *.gif (keine Animation) unterstützt. Ebenso werden kleinere *.exe Dateien erstellt entgegen einer Verwendung der nativen Purebasic ImageDecoder. Diese müssen nicht nur für jedes Bildformat separat inkludiert werden, verursachen auch eine erheblich größere *.exe. Des weiteren kann der native PNG Decoder ein mit Pngout hoch-komprimiertes *.png Bildformat (noch) nicht fehlerfrei dekodieren.</td>
+</tr>
+
+<tr  style="background-color:#FFFFA0;color:#000000;">
+<th>#IsC2D_GdiPlus =  2</th><th>Experimenteller API-Decoder</th>
+</tr>
+
+<tr>
+<td style="text-align:left;padding-left:10px;padding-right:10px;">GdipCatch(Image, *Memory.Union, Length)</td><td style="text-align:left;padding-left:10px;padding-right:10px;">= *hBild oder #Bildnummer wenn #PB_Any für Image angegeben wurde. Es wird ein um ~1KB kürzeres verarbeiten von Bildformaten angewendet welches ausschließlich das *.png und *.ico Bildformat unterstützt und derzeit nur zu Testzwecken vorhanden ist, bisher jedoch fehlerfrei zu funktionieren scheint, einfach mal ausprobieren.</td>
+</tr>
+
+</table>

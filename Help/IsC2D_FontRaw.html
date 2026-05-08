@@ -1,0 +1,21 @@
+<table style="FONT-SIZE: 9pt; FONT-FAMILY: Courier New; WIDTH: 98%; BORDER-COLLAPSE: collapse" border="1">
+
+<tr style="COLOR:#000000; BACKGROUND-COLOR:#ffffa0">
+<th style="WIDTH: 45%">#IsC2D_FontRaw = 1</th><th>Erweiterung zu #IsC2D_Font</th>
+</tr>
+
+<tr>
+<td>FontRawInit(ID, *Memory.Union=#PB_Default, Length=0, zw=1, zh=1, Color.l=#White, Width=8, NumChar.a=#NUM_CHR)</td>
+<td>= #True, #Null = Fehler. Initialisiert einen Demo-/Cracktro-typischen RawFont wie er zu Zeiten des Amiga verwendet wurde. *Memory = Daten des RawFont. Als Standard = #PB_Default wird TopazNew.raw/8 initialisiert, hierzu muss <b>#IsC2D_Topaz</b> aktiviert sein. Length = bestimmt die Byte-Größe von *Memory. zw/zh = Höhe-/Breite pro Pixel-Bit. Color = RGB Farbwert. Width = tatsächliche Breite des RawFont. Die RawFont-Daten liegen in Byte (8 Bit), Word (16 Bit), Long (32 Bit) oder Quad (64 Bit) je Buchstaben-Breite vor. Sollte bei Byte (8 Bit) nur eine 5 Bit Breite verwendet werden, kann über Width eine entsprechende Anpassung erfolgen. NumChar = Anzahl der Zeichen (0-255) derzeit sollten immer 64 Buchstaben (entsprechend dem Standard-String) verfügbar sein!</td>
+</tr>
+
+<tr style="COLOR:#000000; BACKGROUND-COLOR:#C5FFC3">
+<th style="WIDTH: 45%">Amiga Utilities (WinUAE)</th><th>Beschreibung</th>
+</tr>
+
+<tr>
+<td>F2R, F2RLcase, F2RUase</td>
+<td>Font2Raw (F2R) v1.0 von Niels Keurentjes ist ein nützliches Tool um RawFonts auf den Amiga zu erstellen. Da jedoch nach jeder RawFont-Erstellung nicht nur das Programm neu gestartet werden muss auch entsprechende Zeichenkette (64 Zeichen) jeweils eingetippt werden müssen da die Standardfolge nicht mit C2D kompatibel ist, wurde F2R zur Nervenschonung so gepatcht, daß F2RLcase bei Neustart einen C2D kompatiblen String in Kleinbuchstaben- bzw. F2RUcase in Großbuchstaben direkt zur Verfügung stellt. Zur Zeit unterstützt C2D nur das Byte-Format da wohl ein Word/Long Bug in F2R vorhanden ist?</td>
+</tr>
+
+</table>
