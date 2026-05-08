@@ -1,0 +1,51 @@
+<table style="font-family:Courier New;font-size:9pt;border-collapse:collapse;width:98%;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_NetWork = 1</th><th>Unterstützung für Online-Dateien</th>
+</tr>
+
+<tr>
+<td>NetWorkBytes(Length=4096)</td><td>Length = Byte-Größe zur temporären Zwischenspeicherung eines Download. Höhere Werte beschleunigen den Download bei gleichzeitig höherer Beanspruchung der Systemressourcen.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>NetWorkCallBack(*CallBack=0)</td><td>Der Parameter *CallBack sollte bei Verwendung ein Zeiger auf eine @Procedure(Param) beinhalten. Über Param kann der prozentuale Status des Download ausgewertet werden. Sollte @Procedure(Param) einen Wert &#x2260; 0 zurückgeben, wird der Download abgebrochen.</td>
+</tr>
+
+<tr>
+<td>NetWorkFree()</td><td>Beendet die temporäre C2D/0.3 Internetverbindung.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>NetWorkLoad(Url$)</td><td>= *Datenspeicher, #Null = Fehler. Einlesen einer Online-Datei in einen lokalen Zwischenspeicher. Dieser Zwischenspeicher muss manuell freigegeben werden. Die Größe des *Datenspeicher kann nativ über MemorySize() ermittelt werden.</td>
+</tr>
+
+<tr>
+<td>NetWorkSize(Url$)</td><td>= Byte-Größe der Online-Datei Url$.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>NetWorkSkip(Length=0)</td><td>Length = Anzahl Bytes die von der Startposition einer Online-Datei übersprungen werden. Gedacht um individuelle Header diverser Pseudo-Formate zu überspringen. Wichtig: nicht erlaubte / vorgetäuschte Dateiformate können zu einer Sperrung durch den Hoster führen, das Risiko trägt alleine der Uploader!</td>
+</tr>
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_NetWork = 2</th><th>Online-Datei herunterladen</th>
+</tr>
+
+<tr>
+<td>NetWorkDownload(Url$, File$)</td><td>= Gespeicherte Dateigröße, #Null = Fehler. Die Online-Datei Url$ wird aus dem Weltnetz heruntergeladen und in die Datei File$ gespeichert.</td>
+</tr>
+
+<tr style="background-color:#C5FFC3;color:#000000;">
+<th style="width:45%;">Privat</th><th style="width:55%;">Intern</th>
+</tr>
+
+<tr>
+<td>NetWorkInit(Url$)</td><td>Öffnet eine temporäre C2D/0.3 Internetverbindung. Die Netzadresse Url$ wird in ein netzgültiges (canonicalized) Zeichenformat konvertiert.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>NetWorkUrl(Url$)</td><td>= Konvertierte Url$, unsichere Zeichen der Netzdatei werden vor Zugriff konvertert (Canonicalize, "#" = %23...)</td>
+</tr>
+
+</table>

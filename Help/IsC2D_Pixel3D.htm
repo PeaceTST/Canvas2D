@@ -1,0 +1,55 @@
+<table style="border-collapse:collapse;width:98%;font-family:Courier New;font-size:9pt;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_Pixel3D = 1</th><th>Pixel3D Bitmap</th>
+</tr>
+
+<tr>
+<td>IsPixel3D(ID)</td><td>= Listeneintrag, #Null = Fehler</td>
+</tr>
+
+<tr style="background-color:#f2f2f2;color:#000000;">
+<td>Pixel3DSAngle(ID, x.f, y.f, z.f)</td><td>Blickwinkel auf die Bitmap.</td>
+</tr>
+
+<tr>
+<td>Pixel3DAxis(ID, x.f, y.f)</td><td>Verschiebt die Achsen einer Pixel3D-Bitmap relativ zum Mittelpunkt.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>Pixel3DClip(ID, x, y, w, h)</td><td>Bestimmt die Begrenzungen für die sichtbare Darstellung.</td>
+</tr>
+
+<tr>
+<td>Pixel3DCount(ID)</td><td>= Anzahl der verwendeten Farbpixel einer Bitmap.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>Pixel3DDraw(ID, x.f=0, y.f=0, Alpha=255)</td><td>= Anzahl der dargestellten Pixel, eine Pixel3D-Bitmap wird an Position x/y vom mittleren Null-Punkt aus dargestellt. Über den Parameter Alpha kann die Transparenz bestimmt werden.</td>
+</tr>
+
+<tr>
+<td>Pixel3DDrawColor(ID, x.f=0, y.f=0, Color.l)</td><td>= Anzahl der dargestellten Pixel, eine Pixel3D-Bitmap wird an Position x/y vom mittleren Null-Punkt aus dargestellt. Der Parameter Color muss einen Farbwert enthalten in welchen das Bild dargestellt wird. Der Alphakanal wird unterstützt.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>Pixel3DFree(ID)</td><td>Löscht eine- oder alle (ID = #PB_All) Pixel3D-Bitmaps.</td>
+</tr>
+
+<tr>
+<td>Pixel3DH(ID)</td><td>= entspricht die Hälfte der tatsächlichen Pixelhöhe vom mittleren Null-Punkt.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>Pixel3DInit(ID, Image, Color.l=#Black)</td><td>Initialisiert ein Pixel3D-Bild mit der Kennung ID welches aus einer zuvor initialisierten Image (#Bildnummer) erstellt wird. Über Color wird ein transparenter Farbwert bestimmt, Standard ist Schwarz = Transparent. Es ist zu beachten, daß nicht die Größe/Breite des Bildes die Darstellungsgeschwindigkeit beeinflußt, maßgeblich ist die Anzahl der Farb-Pixel. Rückgabewert = Anzahl der tatsächlich verwendeten Pixel. Transparente Pixel bzw. Farbpixel mit dem Wert Color werden aus Gründen der Geschwindigkeit nicht berücksichtigt.</td>
+</tr>
+
+<tr>
+<td>Pixel3DRotate(ID, x.f, y.f, z.f)</td><td>Rotiert eine Bitmap um die Achsen der jeweiligen Geschwindigkeitsangaben.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>Pixel3DW(ID)</td><td>= entspricht die Hälfte der tatsächlichen Pixelbreite vom mittleren Null-Punkt.</td>
+</tr>
+
+</table>

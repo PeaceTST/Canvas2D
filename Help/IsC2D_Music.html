@@ -1,0 +1,51 @@
+<table style="border-collapse:collapse;width:98%;font-family:Courier New;font-size:9pt;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_Music = #XMU_AMP</th><th>Musikdatei mit AmpMaster_x86.dll abspielen (unterstützt 944+ Dateiformate mittels WinAMP in- & out Plugins)</th>
+</tr>
+
+<tr>
+<td>MusicFree()</td><td>Stoppt die Musikwiedergabe und schließt die DLL.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>MusicInit(Path$=#Null$)</td><td>Initialisiert die AmpMaster DLL. Standard Zugriffspfad der DLL = "C:\Users\Public\Documents\AmpMaster\", dieser kann über Pfad$ individuell bestimmt werden.</td>
+</tr>
+
+<tr>
+<td>MusicPlay(*Memory, Length=#Null, SubSong=#Null)</td><td>= Musikwiedergabe (#Null = Fehler). Musik wird nur von einer externen Datei abgespielt, weshalb in *Memory ein Zeiger auf einen @Dateinamen übergeben werden muss, Length wird bei = #C2D_Music_AMP ignoriert, der Parameter SubSong = #Nummer spielt bei Multi-Musikformaten einen formatinternen Song. Derzeit werden folgende Formate mit "SubSongs" unterstützt: *.sid; *.mdat; *.tfm; *.tfx; *.nsf; *.gbs; *.fred</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>MusicStop()</td><td>Stoppt die aktuelle Musikwiedergabe.</td>
+</tr>
+
+<tr>
+<td>MusicLength()</td><td>= #Gesamtlänge in Millisekunden.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>MusicLoop()</td><td>= #Musikwiederholung nachdem das Lied vollständig abgespielt wurde, #Null = Musik ist noch nicht beendet.</td>
+</tr>
+
+<tr>
+<td>MusicPercent()</td><td>= #Prozentualer Wert welcher bisher abgespielt wurde (100% = Ende)</td>
+</tr>
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_Music = #XMU_(Type)</th><th>Dateien und/oder inkludierte Musik abspielen (s. <a href="Table_Music.htm">Tabelle</a>).</th>
+</tr>
+
+<tr>
+<td>MusicFree()</td><td>Stoppt die Musikwiedergabe.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>MusicInit(Path$=#Null$, *CallBack=#Null)</td><td>Initialisiert die SCAL_x86-64 DLL (<i>Scal = Ahd. f. Schall</i>). Standard Zugriffspfad der DLL entspricht Pfad der ausführbaren Datei, dieser kann über Pfad$ individuell bestimmt werden. *CallBack = Zeiger auf eine @Procedure(Param) die während einem Download intern von SCAL aufgerufen werden soll, Param übergibt hierbei den Status von 0-100% = Download beendet.</td>
+</tr>
+
+<tr>
+<td>MusicPlay(*Memory, Length=#Null, SubSong=#Null)</td><td>= #Musikwiedergabe (#Null = Fehler). Wiedergabe von Musik in *Memory. Length = *Speicherende oder #Speichergröße. Ist Length = #Null so wird *Memory als ein Zeiger auf einen @Dateinamen interpretiert, hierzu sollte je nach Unterstützung mit <b>#IsC2D_File</b> der Dateizugriff aktiviert werden!</td>
+</tr>
+
+</table>
