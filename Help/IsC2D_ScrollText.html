@@ -1,0 +1,55 @@
+<table style="font-family:Courier New;font-size:9pt;border-collapse:collapse;width:98%;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_ScrollText = 1</th><th>Textzeile horizontal bewegen</th>
+</tr>
+
+<tr>
+<td>IsScrollText(ID)</td><td>= Listeneintrag, #Null = Fehler</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>ScrollTextDraw(ID, y.f, Alpha=255)</td><td>= #F_End entspricht Textende. Zeichnet einen zuvor initialisierten ScrollText mit der Kennung ID an Position y. Alpha = Transparenz des Scrolltext.</td>
+</tr>
+
+<tr>
+<td>ScrollTextFree(ID)</td><td>Löscht einen- oder alle initialisierten ScrollTexte (ID = #PB_All)</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>ScrollTextH(ID)</td><td>= #Pixel-Höhe</td>
+</tr>
+
+<tr>
+<td>ScrollTextInit(ID, *Memory.Ascii)</td><td>Initialisiert einen ScrollText welcher in *Memory vorliegt. Nur Sonderzeichen #Tab wird unterstützt.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>ScrollTextSinus(ID, Height.f=0, Frequency.f=0, Speed.f=0)</td><td>Startet / Stoppt die Sinusdarstellung. Height = Höhe des Sinus, Frequency = Frequenz des Sinus, Speed = Geschwindigkeit der Sinus-Frequenz. Wird für Height = 0 angegeben stoppt die Sinusdarstellung, Frequency und Speed werden erst durch neue Werte &#x2260; 0 verändert.</td>
+</tr>
+
+<tr>
+<td>ScrollTextSpeed(ID, Speed.f)</td><td>Speed = Bewegungsgeschwindigkeit von rechts nach links.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>ScrollTextW(ID)</td><td>= #Pixel-Breite</td>
+</tr>
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_ScrollText = 2</th><th>Erweiterung für Text-Effekte (s. <a href="Table_TextCodes.htm">Tabelle</a>)</th>
+</tr>
+
+<tr>
+<td>ScrollTextDraw(ID, y.f, Alpha=255)</td><td>= Param, entspricht Parameter für #FC_Return. Ein Parameter-Wert von -1 (#F_End) sollte nicht verwendet werden, da dieses für das Textende belegt ist.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>ScrollTextInit(ID, *Memory.Ascii)</td><td>Es werden zusätzlich innerhalb des zu initialisierenden Text Steuer-Codes unterstützt mit der Syntax "<b>{Code,Param.f}</b>". Eine Übersicht der Steuer-Codes wird in <a href="Table_TextCodes.htm">Tabelle</a> aufgeführt.</td>
+</tr>
+
+<tr>
+<td>ScrollTextPos(ID, Index=#Null)</td><td>= Textposition. Ist Index > #Null wird entsprechend der Wertangabe die Position des ScrollText gesetzt. Dies kann in der Testphase unterstützend für das erstellen von Effekte {Code,Param.f} wirken um den TextScroller ab einer Index-Position zu starten.</td>
+</tr>
+
+</table>

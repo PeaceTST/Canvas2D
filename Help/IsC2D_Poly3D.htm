@@ -1,0 +1,55 @@
+<table style="border-collapse:collapse;width:98%;font-family:Courier New;font-size:9pt;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_Poly3D = 1</th><th>Polygon mit beliebig vielen Eckpunkten</th>
+</tr>
+
+<tr>
+<td>IsPoly3D(ID)</td><td>= Listeneintrag, #Null = Fehler</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>Poly3DAngle(ID, x.f, y.f, z.f)</td><td>Blickwinkel auf ein Polygon.</td>
+</tr>
+
+<tr>
+<td>Poly3DBrush(ID, Image)</td><td>Ein Bild (Image = #Bildnummer) wird als Füllung verwendet. Die Dimensionen beziehen sich auf die Begrenzungen welche in Poly3DClip() angegeben wurden. Kleine Bilder werden endlos gekachelt.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>Poly3DClip(ID, x, y, w, h)</td><td>Bestimmt die Begrenzungen für die sichtbare Darstellung. Wird für ID = #PB_All übergeben, werden die Begrenzungen für alle Polygone angewendet.</td>
+</tr>
+
+<tr>
+<td>Poly3DColor(ID, Color.l, Pen.l=#PB_Ignore, w=0)</td><td>Bestimmt einen neuen Farbwert für ein Polygon mit der Kennung ID. Color = RGB Farbe (kein Alpha), Pen = Umrandungsfarbe, w = Breite von Pen.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>Poly3DDraw(ID, x.f=0, y.f=0)</td><td>Ein Polygon wird an Position x/y vom mittleren Null-Punkt aus dargestellt. Positive x/y Werte verschieben ein Polygon nach rechts/runter, negative nach links/hoch.</td>
+</tr>
+
+<tr>
+<td>Poly3DDrawLine(ID, x.f=0, y.f=0, Color.l)</td><td>Ein Polygon wird an Position x/y vom mittleren Null-Punkt nur in seiner Umrandung (unausgefüllt) dargestellt. Color = RGB-Wert für die Umrandungsfarbe.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>Poly3DFree(ID)</td><td>Löscht ein- oder alle (ID = #PB_All) Polygone.</td>
+</tr>
+
+<tr>
+<td>Poly3DInit(ID, *Memory.Union, Color.l=#White, Pen.l=#PB_Ignore)</td><td>= Anzahl der Eckpunkte (Vertices), #Null = Fehler. Initialisiert ein Polygon mit der Kennung ID aus den Dateninhalt von *Memory. Color = Füllfarbe, Pen bestimmt bei Angabe eines Farbwert die Umrandungsfarbe. Ein jeweiliger Alpha-Kanal wird nicht ünterstützt. Die Initialisierung muss vor allen anderen Befehlen ausgeführt werden.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>Poly3DRotate(ID, x.f, y.f, z.f)</td><td>Rotiert ein Polygon um die Achsen der jeweiligen Geschwindigkeitsangaben.</td>
+</tr>
+
+<tr>
+<td>Poly3DScale(ID, Ratio.f)</td><td>Dimensioniert ein Polygon proportional, Beispiel Ratio = 2 entspricht doppelte Größe.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>Poly3DZoom(ID, w.f, h.f)</td><td>Vergrößert ein Polygon unproportional in w = Breite und h = Höhe.</td>
+</tr>
+
+</table>

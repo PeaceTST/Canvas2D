@@ -1,0 +1,29 @@
+<pre style="text-align:center;"><b>Wird in eventuell folgenden Versionen nicht mehr unterstützt!</b>
+Vollständig ersetzt durch: <a href="IsC2D_ScrollText.html">IsC2D_ScrollText / ScrollTextSinus()</a></pre>
+
+<table style="font-family:Courier New;font-size:9pt;border-collapse:collapse;width:98%;" border="1">
+<tr style="background-color:#FFA0A0;color:#000000;">
+	<th style="width:45%;">#IsC2D_SinusText = 1</th><th>Bitmap Sinus-Text</th>
+</tr>
+<tr>
+	<td>IsSinusText(ID)</td><td>= Listeneintrag, #Null = Fehler</td>
+</tr>
+<tr style="background-color:#F2F2F2;color:#000000;">
+	<td>SinusTextDraw(ID, y.f, Alpha=255)</td><td>Zeichnet einen zuvor initialisierten Text mit der Kennung ID an zentrierter Position y. Alpha = Transparenz des Sinustext.</td>
+</tr>
+<tr>
+	<td>SinusTextFree(ID)</td><td>Löscht ein- oder alle initialisierten SinusTexte (ID = #PB_All)</td>
+</tr>
+<tr style="background-color:#F2F2F2;color:#000000;">
+	<td>SinusTextInit(ID, *Memory.Ascii, Frequency.f=15.0, Height.f=70.0, YStep.f=5.0)</td><td>Initialisiert einen Sinus-Text welcher in *Memory vorliegt. Frequency = Frequenz des Sinus, Height = Höhe des Sinus, YStep = Geschwindigkeit der Sinus-Frequenz.</td>
+</tr>
+<tr>
+	<td>SinusTextSpeed(ID, Speed.f)</td><td>Speed = Bewegungsgeschwindigkeit von rechts nach links.</td>
+</tr>
+<tr style="background-color:#FFA0A0;color:#000000;">
+	<th style="width:45%;">#IsC2D_SinusText = 2</th><th>Erweiterung für Text-Effekte (s. <a href="Table_TextCodes.htm">Tabelle</a>)</th>
+</tr>
+<tr>
+	<td>SinusTextInit(ID, *Memory.Ascii, Frequency.f=15.0, Height.f=70.0, YStep.f=5.0)</td><td>Initialisiert einen SinusText welcher in *Memory vorliegt. Neben dem Sonderzeichen #Tab werden zusätzlich innerhalb des zu initialisierenden Text integrierte Steuer-Codes unterstützt mit der Syntax "<b>{Code,Param.f}</b>". Eine Übersicht der Steuer-Codes wird in <a href="Table_TextCodes.htm">Tabelle</a> aufgeführt.</td>
+</tr>
+</table>

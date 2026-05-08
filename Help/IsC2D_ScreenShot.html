@@ -1,0 +1,23 @@
+<table style="font-family:Courier New;font-size:9pt;border-collapse:collapse;width:98%;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+	<th style="width:45%;">#IsC2D_ScreenShot = 1</th><th>Canvas-Ausgabe in das Clipboard kopieren</th>
+</tr>
+
+<tr>
+<td>ScreenShot()</td><td>Erstellt ein Bildschirmfoto der aktuellen Canvas-Ausgabe und kopiert dieses in das Clipboard.<br><br>
+<pre style="margin-left:12px;margin-right:12px;background:#FFFFC6;font-size:8pt;"><span style="color:#008B8B;">; Beispiel</span>
+Repeat
+   Select   WindowEvent()
+      Case  #Null :  Delay(1)
+      Case  #WM_KEYDOWN
+         Select   EventwParam()
+            Case  #VK_F1      :  <span style="color:#FF8000;font-weight:bold;">C2D</span>::<span style="color:#0000B8;font-weight:bold;">ScreenShot()</span>
+            Case  #VK_ESCAPE  :  Break
+         EndSelect
+   EndSelect
+ForEver</pre>
+</td>
+</tr>
+
+</table>
