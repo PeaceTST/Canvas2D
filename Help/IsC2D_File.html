@@ -1,0 +1,27 @@
+<table style="font-family:Courier New;font-size:9pt;border-collapse:collapse;width:98%;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_File = 1</th><th>Datei</th>
+</tr>
+
+<tr>
+<td>FileLoad(File$, Flags=0)</td><td>= *Datenspeicher. Einlesen einer Datei in einen lokalen Zwischenspeicher. Dieser Zwischenspeicher wird standardmäßig bei erneuten Aufruf gelöscht (Flags=0), somit sollte eine direkte Verarbeitung durchgeführt werden. Ist Flags=1 wird keine Löschung bei erneuten Aufruf durchgeführt. Wurde <b>#IsC2D_Network</b> aktiviert, werden Dateien (HTTP://) auch aus dem Internet unterstützt.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>FilePath(Path$)</td><td>Setzt den Standardpfad für Dateizugriffe, ähnlich dem nativen IncludePath, Online-Pfade werden unterstützt.</td>
+</tr>
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th>#IsC2D_File = 2</th><th>Pfad</th>
+</tr>
+
+<tr>
+<td>FileParent(Path$=#Null$, Dirs=1)</td><td>= Pfad des Elternverzeichnis ausgehend von Path$ (#Null$ = aktuelles Verzeichnis). Dirs = Anzahl der Elternverzeichnisse.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>FileSave(File$, *Memory, Length)</td><td>= Tatsächlich gespeicherte Bytes. Speichert den Dateninhalt von *Memory mit der Größe Length in die Datei File$.</td>
+</tr>
+
+</table>
