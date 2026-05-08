@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>TextControl</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+</style>
+
+</head>
+
+<body><h4 style="text-align:center;">Steuer-Codes für Bitmap-Font Textdarstellung<br><span style="font-size:8pt;"><span style="color:#FF0000;">{</span>Code,Param.f<span style="color:#FF0000;">}</span></span></h4>
+
+<table style="border-collapse:collapse;width:98%;font-family:Courier New;font-size:9pt;text-align:center;padding-left:20px;padding-right:40px;" border="1">
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th>Code</th><th>&#xA0;#&#xA0;</th><th>Param.f</th><th>IsC2D_(Effekt) = 2</th><th>Beispiel<br>{Code,Param.f}</th><th style="width:35%;text-align:left;padding-left:10px;padding-right:10px;">Effekt</th>
+</tr>
+
+<tr>
+<td>#C2C_Bitmap</td><td>0</td><td>#BitmapID</td><td>#IsC2D_PageText<br>#IsC2D_ScrollText</td><td>{0,3,(x,y)}<br><small style="color:gray;">#BitmapID 3 an Textposition darstellen</small></td><td style="text-align:left;padding-left:10px;padding-right:20px;">Bitmap-Bild einfügen. #BitmapID = 0 entspricht {0,0} oder {0}. Wichtig: einzubindende Bitmap-Bilder müssen <b>vor</b> der Texterstellung initialisiert werden, #IsC2D_Bitmap muss daher aktiviert sein! Die zusätzlichen Parameter x,y dienen nur bei PageText als Positions-Offsets.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>#C2C_Font</td><td>1</td><td>#FontID</td><td>#IsC2D_PageText<br>#IsC2D_MoveText<br>#IsC2D_ScrollText</td><td>{1,2}Text<br><small style="color:gray;">Text mit der #FontID 2 darstellen</small></td><td style="text-align:left;padding-left:10px;padding-right:20px;">Setzt einen neuen Font. #FontID = 0 entspricht {1,0} oder {1}. Wichtig: entsprechende Fonts müssen <b>vor</b> der Texterstellung initialisiert werden!</td>
+</tr>
+
+<tr>
+<td>#C2C_Pause</td><td>2</td><td>Millisekunden</td><td>#IsC2D_PageText<br>#IsC2D_ScrollText</td><td>Text{2,5000}<br><small style="color:gray;">Text 5 sek. pausieren</small></td><td style="text-align:left;padding-left:10px;padding-right:20px;">Pausiert eine Seitendarstellung bzw. die Bewegung eines ScrollText. Eine Sekunde {2,1000} oder {2}.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>#C2C_Space</td><td>3</td><td>%Prozent</td><td>#IsC2D_ScrollText</td><td>Text{3,25}Text<br><small style="color:gray;">Textabstand von 25% einfügen</small></td><td style="text-align:left;padding-left:10px;padding-right:20px;">Setzt einen prozentualen Abstand zum nächsten Buchstaben. Die Prozentwerte beziehen sich auf die Breite des Canvas. Ganze Canvas-Breite {3,100} oder {3}.</td>
+</tr>
+
+<tr>
+<td>#C2C_Speed</td><td>4</td><td>Geschwindigkeit</td><td>#IsC2D_ScrollText</td><td>{4,3}Text<br><small style="color:gray;">Text mit 3facher Geschwindigkeit bewegen</small></td><td style="text-align:left;padding-left:10px;padding-right:20px;">Ändert die Geschwindigkeit. Standard {4,1} oder {4}.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>#C2C_Center</td><td>5</td><td>%Prozent</td><td>#IsC2D_ScrollText</td><td>{5}Text{5}{2}<br><small style="color:gray;">Text zentriert darstellen und für 1 sek. pausieren</small></td><td style="text-align:left;padding-left:10px;padding-right:20px;">Zentriert einen Text welcher innerhalb von {5}Text{5} angegeben werden muss. Optional kann für das abschließende {5} mittels Param.f bezogen auf die prozentuale Canvas-Breite eine zusätzliche Positionskorrektur erfolgen. Ein zentrierter Text kann anschließend mit #FC_Pause ohne weitere Freizeichen pausiert werden.</td>
+</tr>
+
+<tr>
+<td>#C2C_Return</td><td>6</td><td>Rückgabewert</td><td>#IsC2D_ScrollText</td><td>{6,255}Text<br><small style="color:gray;">Rückgabewert an Textposition beträgt 255</small></td><td style="text-align:left;padding-left:10px;padding-right:20px;">Bestimmt den Rückgabewert an Textposition für das Hauptprogramm. Dieser Wert kann für einen positionsgenauen Programmablauf eingesetzt werden.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>#C2C_MoveY</td><td>7</td><td>%Prozent</td><td>#IsC2D_ScrollText</td><td>{7,-10}Text<br><small style="color:gray;">Verschiebt nachfolgenden Text um 10% nach oben</small></td><td style="text-align:left;padding-left:10px;padding-right:20px;">Verschiebt einen Text ausgehend von aktuell vertikaler Position. Die Prozentangaben beziehen sich auf die Höhe des Canvas. Standard {7,0} oder {7}.</td>
+</tr>
+
+<tr>
+<td>#C2C_Pixel3D</td><td>8</td><td>#Pixel3DID</td><td>#IsC2D_ScrollText</td><td>{8,0}Text<br><small style="color:gray;">#Pixel3dID 0 an Textposition darstellen</small></td><td style="text-align:left;padding-left:10px;padding-right:20px;">Pixel3D-Bild einfügen. #Pixel3dID = 0 entspricht {8,0} oder {8}. Wichtig: einzubindende Pixel3D-Bilder müssen <b>vor</b> der Texterstellung initialisiert werden, #IsC2D_Bitmap muss daher aktiviert sein!</td>
+</tr>
+
+</table></body></html>

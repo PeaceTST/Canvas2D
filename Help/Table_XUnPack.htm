@@ -1,0 +1,92 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>XUnPack</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+</style>
+
+</head>
+
+<body><h4 style="text-align:center;">Include-Flags für XUnPack (XUP::)<br><span style="font-size:8pt;">Alle Flags können kombiniert werden - #IsC2D_XUnPack = #XUP_PACK | #XUP_APLB | #XUP_JCG1 | ...</span></h4>
+
+<table style="border-collapse:collapse;width:98%;font-family:Courier New;font-size:9pt;text-align:center;padding-left:20px;padding-right:40px;" border="1">
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="padding-left:10px;padding-right:10px;">#IsC2D_XUnPack</th><th style="text-align:left;padding-left:10px;padding-right:10px;">Beschreibung</th>
+</tr>
+
+<tr>
+<td>#XUP_APLB</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Entpacken von aPLib</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>#XUP_BLZ1</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Entpacken von BriefLZ (PB-Native)</td>
+</tr>
+
+<tr>
+<td>#XUP_BZP2</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Entpacken von BZip2 & #XUP_XPKF BZP2</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>#XUP_CALL</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Zusätzlicher Callback für #XUP_PACK (#XUP_APLB, #XUP_JCG1) während dem Packvorgang</td>
+</tr>
+
+<tr>
+<td>#XUP_FILE</td><td style="text-align:left;padding-left:10px;padding-right:20px;">*Memory = @File$, der Funktions-Parameter Length muss mit #Null angegeben werden</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>#XUP_FIMP</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Entpacken von Amiga FileImploder & #XUP_XPKF IMPL/ATN!</td>
+</tr>
+
+<tr>
+<td>#XUP_GZIP</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Entpacken von (G)Zip & #XUP_XPKF GZIP</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>#XUP_JCG1</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Entpacken von JCalG1 - <span style="color:#FF0000;">nur für x86</span></td>
+</tr>
+
+<tr>
+<td>#XUP_LZMA</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Entpacken von LZMA</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>#XUP_NONE</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Entpacken von #XUP_XPKF NONE</td>
+</tr>
+
+<tr>
+<td>#XUP_PACK</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Bereitstellung der Packfunktionen für APLB, BLZ1, BZP2, FIMP, GZIP, JCG1 (x86), LZMA</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>#XUP_PP20</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Entpacken von Amiga PowerPacker Data & #XUP_XPKF PWPK</td>
+</tr>
+
+<tr>
+<td>#XUP_PURE</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Alternative Verwendung der nativen Purebasic Static-Libs BLZ1, BZP2, GZIP, JCalG1 (x86)</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>#XUP_PX20</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Entkodieren von Amiga PowerPacker verschlüsselten Daten</td>
+</tr>
+
+<tr>
+<td>#XUP_SQSH</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Entpacken von #XUP_XPKF SQSH</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>#XUP_UICE</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Entpacken von Atari Atomik 3.5 / Ice! 2.1 + 2.4</td>
+</tr>
+
+<tr>
+<td>#XUP_XPKF</td><td style="text-align:left;padding-left:10px;padding-right:20px;">Verwendung diverser Amiga XPK Compressor (PWPK 0.90, GZIP, BZP2, IMPL, SQSH, NONE) - <b>IMPL</b> enpackt fehlerhaft wenn Originaldatei größer 65535 Bytes ist (Custom Header) - <b>NONE</b> dient nur zu Testzwecken, ebenfalls fehlerhaft (Header unstimmig mit Dateigröße).</td>
+</tr>
+
+</table></body></html>
