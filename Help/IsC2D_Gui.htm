@@ -1,0 +1,581 @@
+<h4 style="font-family:Arial,Helvetica,sans-serif;font-size:12pt;text-align:center;">i_C2D_Gui.pbi<br><span style="font-size:8pt;">Verwendung <u>auch</u> unabhängig einer C2D-Initialisierung (#IsC2D_C2D = 0)</span></h4>
+
+<table style="border-collapse:collapse;width:98%;font-family:Courier New;font-size:9pt;" border="1">
+
+<!--- GADGET-TYPEN --->
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th>Unterstützte Gadget-Typen</th><th>Beschreibung</th>
+</tr>
+
+<tr>
+<td>GuiButtonGadget(ID, x, y, w, h, t$, Flags=0, Image=#PB_Ignore, Toggle$=#Null$)</td>
+<td><span style="color:#8B0000;font-weight:bold;">#Gui_GadgetButton</span>: Erstellt ein Schalter-Gadget. ID = Gadgetnummer, x, y, w, h = Position und Ausmaße, t$ = Text, Flags = <span style="color:#8B0000;">#Gui_Flag[Left|Toggle|Vertical]</span>, Image = Bildnummer oder hID eines Icons, Toggle$ = Alternativ-Text wenn das Toggle-Flag gesetzt wurde. Wird w = 0 oder h = 0 übergeben, wird die Breite anhand von Text und Bild ermittelt, Standard-Höhe ist 22 Pixel. Standard-Darstellung von Bild und Text ist horizontal ausgerichtet, durch das Flag <span style="color:#8B0000;">#Gui_FlagVertical</span> werden Bild und Text vertikal angeordnet.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiContainerGadget(ID, x, y, w, h)</td>
+<td><span style="color:#8B0000;font-weight:bold;">#Gui_GadgetContainer</span>: Erstellt ein CanvasContainer welcher immer mit CloseGadgetList() abgeschlossen werden muss. ID = Gadgetnummer, x, y, w, h = Position und Ausmaße.</td>
+</tr>
+
+<tr>
+<td>GuiDrawButtonGadget(ID, x, y, w, h, t$, Flags=#Gui_FlagCenter, Toggle$=#Null$)</td>
+<td><span style="color:#8B0000;font-weight:bold;">#Gui_GadgetDrawButton</span>: Erstellt ein Schalter-Gadget mit Unterstützung der <b>{Control,Parm}</b> Codes. Weitere Erklärung unter GuiDrawText().</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiDrawTextGadget(ID, x, y, w, h, t$, Flags=0)</td>
+<td><span style="color:#8B0000;font-weight:bold;">#Gui_GadgetDrawText</span>: Erstellt ein Text-Gadget mit Unterstützung der <b>{Control,Parm}</b> Codes. Weitere Erklärung unter GuiDrawText().</td>
+</tr>
+
+<tr>
+<td>GuiImageGadget(ID, x, y, w, h, Image, Raster=0)</td>
+<td><span style="color:#8B0000;font-weight:bold;">#Gui_GadgetImage</span>: Erstellt ein Bild-Gadgets. ID = Gadgetnummer, x, y, w, h = Position und Ausmaße, Image = Bildnummer oder hID eines Icons. Ist w = 0 oder h = 0, wird die Breite anhand des Bild ermittelt. Raster = Hintergrund eines transparenten Bildes in Schachbrettmuster darstellen, der übergebene Wert ist die Größe in Pixel eines Rasterfeld. Es besteht keine Event-Abfrage.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiProgressGadget(ID, x, y, w, h, max.d, Frame=0, Flags=0)</td>
+<td><span style="color:#8B0000;font-weight:bold;">#Gui_GadgetProgress</span>: Erstellt ein Gadget mit Fortschrittanzeige. ID = Gadgetnummer, x, y, w, h = Position und Ausmaße, max = maximaler Wert für volle Anzeige, Frame = Modus des Statusrahmen, Flags = <span style="color:#8B0000;">#Gui_FlagVertical</span> für vertikale Darstellung. Es besteht keine Event-Abfrage.</td>
+</tr>
+
+<tr>
+<td>GuiStringGadget(ID, x, y, w, h, t$, Flags=0)</td>
+<td><span style="color:#8B0000;font-weight:bold;">#Gui_GadgetString</span>: Erstellt ein StringGadget. ID = Gadgetnummer, x, y, w, h = Position und Ausmaße, t$ = Text. Zusätzlich werden über Flags die nativen Einstellungen von Purebasic unterstützt.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiTextGadget(ID, x, y, w, h, t$, Flags=0)</td>
+<td><span style="color:#8B0000;font-weight:bold;">#Gui_GadgetText</span>: Erstellt ein TextGadget. ID = Gadgetnummer, x, y, w, h = Position und Ausmaße, t$ = Text. Zusätzlich kann über Flags = <span style="color:#8B0000;">#Gui_Flag[Center,Right]</span> die Ausrichtung bestimmt werden. Wird w = 0 oder h = 0 übergeben, wird die Breite und Höhe anhand des Text entsprechend des aktuellen Font ermittelt.</td>
+</tr>
+
+<tr>
+<td>GuiTrackGadget(ID, x, y, w, h, min.d, max.d, Frame=0, Flags=0)</td>
+<td><span style="color:#8B0000;font-weight:bold;">#Gui_GadgetTrack</span>: Erstellt ein TrackBarGadget. ID = Gadgetnummer, x, y, w, h = Position und Ausmaße, min, max bestimmen die minimal- / maximal einstellbaren Werte. Frame = Modus des Bar-Rahmen (s. #Gui_Frame[Mode]). Zusätzlich kann über Flags = <span style="color:#8B0000;">#Gui_Flag[Vertical|Level,Percent,Number]</span> die Ausrichtung sowie eine Textanzeige des Status eingestellt werden.</td>
+</tr>
+
+<!--- MENU --->
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th>Menu | <span style="color:#8B0000;font-weight:bold;">#Gui_MenuPopup</span></th><th>Darstellung eines Popup-Menü</th>
+</tr>
+
+<tr>
+<td>IsGuiMenu(ID)</td>
+<td>= Überprüfung ob ein Menü initialisiert wurde. Null = Fehler</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiMenuFree(ID)</td>
+<td>Löscht ein Menü mit der Kennung ID. Wird ID = #PB_All übergeben, werden alle Menüs gelöscht.</td>
+</tr>
+
+<tr>
+<td>GuiMenuGetItem(ID)</td>
+<td>= Zuletzt ausgewählte Menüeintrag.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiMenuGetText(ID)</td>
+<td>= Textstring des zuletzt ausgewählten Menüeintrags.</td>
+</tr>
+
+<tr>
+<td>GuiMenuGetState(ID)</td>
+<td>= Status des Menüs mit der Kennung ID.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiMenuSetState(ID, Index)</td>
+<td>Setzt den Status von Index als aktuell aktiv.</td>
+</tr>
+
+<tr>
+<td>GuiMenuSize(ID)</td>
+<td>= Rückgabewert ist die Anzahl der Menüeinträge.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiMenuInit(ID, t$, Count=32)</td>
+<td><span style="color:#8B0000;font-weight:bold;">#Gui_MenuPopup</span>: Erstellt ein Menü mit der Kennung ID. t$ beinhaltet eine Stringkette mit Menübezeichnungen welche mittels ";" getrennt werden müssen - Beispiel: "Menü0;Menü1;Menü2...". Eine Trennlinie kann mittels ":-;" bzw. mit der Konstante <span style="color:#8B0000;">#MENU_LINE$</span> erstellt werden. Der Parameter Count bestimmt die maximale Anzahl der darzustellenden Menüeintäge. Es werden alle DrawTextCodes{##,...} unterstützt.</td>
+</tr>
+
+<tr>
+<td>GuiMenuPopup(ID, Flags=0, Rows=16)</td>
+<td>Menü mit der Kennung ID darstellen. Der Rückgabewert ist die Auswahl eines Menü-Items beginnend mit 0..n. Es werden alle Effekte von DrawText{} unterstützt. Flags = <span style="color:#8B0000;">#Gui_Flag</span>[<span style="color:#8B0000;">Shadow|Border|Center|Toggle|State|User</span>]. Der Parameter Rows wird nur in Verbindung mit dem Flag <span style="color:#8B0000;">#Gui_FlagUser</span> unterstützt (vertikal-/horizontale Menüanordnung).</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiMenuItemAdd(ID, t$, Index=-1)</td>
+<td>Fügt einem Menü ID einen Eintrag hinzu. t$ = Menütext, Index bestimmt die Position (0 = Anfang, -1 = Ende).</td>
+</tr>
+
+<tr>
+<td>GuiMenuItemDelete(ID, Index)</td>
+<td>Löscht einen Menüeintrag.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiMenuItemDisable(ID, Index, State)</td>
+<td>Aktiviert- / deaktiviert einen Menüeintrag. Index = <span style="color:#8B0000;">#PB_All</span> wird unterstützt.</td>
+</tr>
+
+<tr>
+<td>GuiMenuItemIsDisabled(ID, Index)</td>
+<td>= Ermittelt ob der Menüeintrag von Index de-/aktiviert ist.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiMenuItemToggle(ID, Index, State)</td>
+<td>Setzt den Status des Menüeintrag von Index. Index = <span style="color:#8B0000;">#PB_All</span> wird unterstützt.</td>
+</tr>
+
+<tr>
+<td>GuiMenuItemIsToggled(ID, Index)</td>
+<td>= Ermittelt ob der Status des Menüeintrag in-/aktiv ist.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiMenuItemSetData(ID, Index, Value.q)</td>
+<td>Setzt einen individuellen Wert für den Menüeintrag Index.</td>
+</tr>
+
+<tr>
+<td>GuiMenuItemGetData(ID, Index)</td>
+<td>= Individuellen Wert von Menüeintrag Index.</td>
+</tr>
+
+<!--- GUI MISC --->
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_Gui = #Gui_Gadget[Button|Container|Image|Progress|Text|Track] | #Gui_MenuPopup</th><th>Beschreibung</th>
+</tr>
+
+<tr>
+<td>IsGuiGadget(ID)</td>
+<td>= Listeneintrag, #Null = Fehler</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>IsGuiDisabled(ID)</td>
+<td>= #True (deaktiviert), #Null = nicht deaktiviert oder Fehler.</td>
+</tr>
+
+<tr>
+<td>GuiColor(Front.l, Back.l=#PB_Ignore)</td>
+<td>Farbgebung für Vordergrund (Text...) und Hintergrund. Alpha wird nicht unterstützt. Eine Parameterangabe mit #PB_Ignore belässt aktuellen Farbwert.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiCopper(*Memory=0, Mode=#PB_Ignore)</td>
+<td>Zeichnet einen Copper-Effekt auf ein Gadget. *Memory = ABGR-Copper-<a href="Table_Copper.htm">Tabelle</a>, 0 schaltet den Copper-Effekt aus. Mode = 0, 1, 2. Ein de- / aktivierter Copper-Effekt wird auf folgende Gadget-Erstellungen angewendet.</td>
+</tr>
+
+<tr>
+<td>GuiCursorInit(ID)</td>
+<td>ID = RessourceID eines Mauszeiger welcher in einer inkludierten *.rc Datei definiert wurde. Für alle folgend zu erstellenden GuiGadgets wird dieser Mauszeiger definiert.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiCursorSet(Window)</td>
+<td>Window = #Fensternummer. Ein zuvor initialisierter Mauszeiger wird für das Fenster definiert. Diese Anweisung sollte <b>nach</b> Erstellung aller Gadgets in einem Fenster aufgerufen werden. Das EditorGadget wird nicht unterstützt.</td>
+</tr>
+
+<tr>
+<td>GuiDisable(ID, State)</td>
+<td>Dekativiert (State=1) oder aktiviert (State=0) ein GuiGadget.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiDisableRegion(Window, State, x1, y1, x2, y2)</td>
+<td>Dekativiert (State=1) oder aktiviert (State=0) alle GuiGadgets im Fenster #Window welche innerhalb der Start- / Endpunkte von x1/y1 bis x2/y2 erstellt wurden.</td>
+</tr>
+
+<tr>
+<td>GuiEvent(ID)</td>
+<td>= Gadget. Ermittelt ob ein Gadget (ID) mit dem linken Mausschalter ausgewählt wurde. Ist der Rückgabewert &#x3C; #Null (-1) wurde kein Ereignis ausgelöst. Beispiel einer Event-Schleife:<pre style="font-size:smaller;background-color:#FFFFC8;">Repeat
+   Select WindowEvent()
+      Case #Null
+         If C2D::Start()
+            &#x2026;
+            C2D::Stop()
+         EndIf
+      Case #PB_Event_Gadget
+         Gadget = EventGadget()
+         Select <b style="color:#00008B;">C2D::GuiEvent(Gadget)</b>
+            Case #CanvasGadget
+               &#x2026;
+         Default
+            Select Gadget
+               Case #WindowsGadget
+                  &#x2026;
+            EndSelect
+         EndSelect
+   EndSelect
+ForEver
+</pre></td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiFrame(Mode, Alpha=0)</td>
+<td>Bestimmt den Rahmenmodus. Mode = Rahmenart, Alpha = Intensität (0...255) Standard ist 96. An Mode können folgende Werte übergeben werden:<pre style="font-size:smaller;background-color:#FFFFC8;"><span style="color:#8B0000;">#Gui_FrameNone</span>   = kein Rahmen
+<span style="color:#8B0000;">#Gui_Frame3D</span>     = Druckschalter (Standard)
+<span style="color:#8B0000;">#Gui_FrameBar</span>    = Balken Rahmen
+<span style="color:#8B0000;">#Gui_FrameFine</span>   = eingeebneter Rahmen
+<span style="color:#8B0000;">#Gui_FrameFlat</span>   = dunkler / flacher Rahmen
+<span style="color:#8B0000;">#Gui_FrameLite</span>   = heller / flacher Rahmen
+<span style="color:#8B0000;">#Gui_FrameRised</span>  = doppelt erhobener Rahmen
+<span style="color:#8B0000;">#Gui_FrameSunken</span> = erniedrigter Rahmen</pre></td>
+</tr>
+
+<tr>
+<td>GuiFree(ID, Window=#PB_All)</td>
+<td>Löscht ein- oder alle GuiGadgets (ID = #PB_All). Wird an Window eine #Fenster-Nummer übergeben, werden nur die Gadgets innerhalb des #Fensters gelöscht.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiGadget(ID)</td>
+<td>= Nummer eines Gadgets.</td>
+</tr>
+
+<tr>
+<td>GuiGadgetColor(ID, Front.l, Back.l)</td>
+<td>Ändert die Text- / Hintergrundfarbe eines Gadgets.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiGadgetID(ID)</td>
+<td>= Handle eines Gadgets.</td>
+</tr>
+
+<tr>
+<td>GuiGetData(ID)</td>
+<td>= Quad. ID = Gadget, Ermittelt den individuellen Datenwert eines GuiGadgets. Unterstützt alle Gadget-Typen.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiGetState(ID)</td>
+<td>= Status. ID = Gadget, Ermittelt den Status eines GuiGadgets. Nützlich bei GuiButtonGadget() mit dem Flag = <span style="color:#8B0000;">#Gui_FlagToggle</span> bzw. für GuiProgressGadget() und GuiTrackGadget().</td>
+</tr>
+
+<tr>
+<td>GuiGetText(ID)</td>
+<td>= Text$, aktueller Textinhalt eines GuiGadgets.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiToggleColor(Color.l)</td>
+<td>Color = ABGR Hintergrundfarbe für folgende GuiButtonGadgets mit toggle-/aktiven Status. Color = 0 schaltet eine Farbänderung aus.</td>
+</tr>
+
+<tr>
+<td>GuiInit()</td>
+<td>Sollte einmalig vor folgende Gui-Anweisungen aufgerufen werden da hier Standard-Farbe und -Font festgelegt werden.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiLine(x, y, Length, Alpha=#PB_Default, Flags=#PB_Default)</td>
+<td>Zeichnet eine schattierte Line an x, y in der Pixel-Länge Length. Alpha bestimmt die Durchsichtigkeit von 0 bis 255. Wird an Flags <span style="color:#8B0000;">#Gui_FlagVertical</span> übergeben wird eine vertikalie Line entsprechend Length gezeichnet. Alpha und Flags werden immer als standard für folgende Linien eingestellt.</td>
+</tr>
+
+<tr>
+<td>GuiRefresh(ID)</td>
+<td>ID = #Gadgetnummer, Neuzeichnen eines GuiGadget. ID = #PB_All erneuert alle GuiGadgets.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiSetData(ID, Value.q)</td>
+<td>ID = Gadget, Value = Datenwert (Quad). Setzt einen individuellen Datenwert für ein GuiGadget.</td>
+</tr>
+
+<tr>
+<td>GuiSetState(ID, State)</td>
+<td>ID = Gadget, State = Status. Setzt den Status eines GuiGadgets. Nützlich bei GuiButtonGadget() mit dem Flag = <span style="color:#8B0000;">#Gui_FlagToggle</span> bzw. für GuiProgressGadget() und GuiTrackGadget().</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiSetText(ID, t$, Color.l=#PB_Default)</td>
+<td>Setzt den Text eines GuiGadgets. Über den Parameter Color kann eine neue Farbgebung eingestellt werden.</td>
+</tr>
+
+<tr>
+<td>GuiSetToggleText(ID, t$)</td>
+<td>Definiert einen neuen Text eines gedrückten GuiGadgets mit Toggle-Status.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiShadow(Color.l, x=1, y=1)</td>
+<td>Schatteneffekt für zu erstellende GuiGadgets. Color = Schattenfarbe, Alpha und RGB ($AABBGGRR) wird unterstützt. Ein Farbwert von 1 - 255 ändert nur die Intensität. Color = 0 schaltet den Schatteneffekt aus. Die Parameter x / y verschieben den Schatten entsprechend der Pixel-Angabe. Negative Werte werden unterstützt.</td>
+</tr>
+
+<tr>
+<td>GuiType(ID)</td>
+<td>= Gadget-Typ, der Rückgabewert ist gleich wie in Purebasic (#PB_GadgetType_[?].</td>
+</tr>
+
+<!--- FONT --->
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">Font</th><th>Beschreibung</th>
+</tr>
+
+<tr>
+<td>IsGuiFont(ID)</td>
+<td>= Font-Handle der Kennung ID oder Null bei einem Fehler.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiFontFree(ID)</td>
+<td>Löscht einen bzw. alle zuvor initialisierten GuiFonts (#PB_All).</td>
+</tr>
+
+<tr>
+<td>GuiFontInit(ID, Font$, *Memory, Length, h=0, w=0, Flags=0)</td>
+<td>= Font-Handle, initialisert einen Font mit der Kennung ID. Font$ = interner Name des Font, *Memory = Speicheraddresse oder @Dateiname, Length = Größe von *Memory oder Null wenn ein @Dateiname übergeben wurde. h, w = Dimension, Flags = Aussehen des Font.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiFontSet(ID)</td>
+<td>Bestimmt den Font für zu erstellende GuiGadgets.</td>
+</tr>
+
+<tr>
+<td>GuiFontID()</td>
+<td>= aktuell eingestellte FontID().</td>
+</tr>
+
+<!--- PALETTE --->
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">Palette</th><th>Beschreibung</th>
+</tr>
+
+<tr>
+<td>GuiPaletteFree()</td>
+<td>Löscht die zuvor mit Farbwerten initialisierte Pallette und gibt den entsprechenden Speicherbereich frei.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiPaletteGetColor(Index, Alpha=$FF)</td>
+<td>= Farbwert von Index (0 bis Count-1), optional kann über Alpha die Transparenz eingestellt werden.</td>
+</tr>
+
+<tr>
+<td>GuiPaletteInit(*Memory, Count)</td>
+<td>Initialisiert einen Datenbereich *Memory welcher mit $AABBGGRR-Farbwerten vorliegen muss. Count = Anzahl der Farbwerte.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiPaletteSetColor(Index, Color.l)</td>
+<td>Setzt einen neuen Farbwert an Index-Position.</td>
+</tr>
+
+<!--- GUIIMAGE --->
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">Image</th><th>Bilder indizieren für vereinfachte Handhabung / variable Darstellung</th>
+</tr>
+
+<tr>
+<td>IsGuiImage(Index)</td>
+<td>= BildID, 0 = Fehler. Testet ob ein Bild mit dem Index-Wert gelistet wurde, setzt den internen Zeiger auf den Index.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiImageFree(Index=#PB_All, Flags=#False)</td>
+<td>Entfernt ein- bzw. alle (#PB_All) indizierten Bilddaten. Flags=#True löscht das dazugehörige Bild.</td>
+</tr>
+
+<tr>
+<td>GuiImageAdd(Index, Image, Key$=#Null$)</td>
+<td>Trägt ein existierendes Bild in die Liste unter Index ein. Key$ = Kennung um ein bereits gelistetes Bild nicht erneut zu listen. Dieses kann eine Darstellung unter DrawText beschleunigen, da ggf. Netzbilder die im Speicher vorhanden sind, nicht erneut geladen werden müssen.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiImageID(Index)</td>
+<td>= BildID des Listen-Index.</td>
+</tr>
+
+<tr>
+<td>GuiImageKey(Index)</td>
+<td>= Kennung$ des Bild-Index.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiImageW(Index)</td>
+<td>= Bildbreite in Pixel dex Index-Eintrag.</td>
+</tr>
+
+<tr>
+<td>GuiImageH(Index)</td>
+<td>= Bildhöhe in Pixel des Bild-Index.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiImageDraw(Index, x.f, y.f, Alpha=255, Flags=0)</td>
+<td>Zeichnet ein gelistetes Bild in den aktuellen Ausgabekanal. x/y = Position, Alpha = Transparenz, Flags = <span style="color:#8B0000;">#C2F_Center</span> | <span style="color:#8B0000;">#C2F_CenterX</span> | <span style="color:#8B0000;">#C2F_CenterY</span>. Sollte der Wert Flags &#x2260; Null sein, werden die Werte x/y als Offsets zur Positionsausrichtung hinzuaddiert.</td>
+</tr>
+
+<!--- DATAREGISTER D0..D9 --->
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">Dataregister</th><th>Externe Steuerung der Datenregister für GuiDrawText()</th>
+</tr>
+
+<tr>
+<td>GuiDregGet(ID)</td>
+<td>Ermittelt den Wert eines Datenregister. ID ist von 0 bis 9 einsetzbar.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiDregSet(ID, Param)</td>
+<td>Übermittelt dem Datenregister ID den Wert von Param. Datenregister werden von GuiDrawText() unterstützt.</td>
+</tr>
+
+<!--- DRAWTEXT --->
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">Draw</th><th>Innerhalb von StartDrawing() / StopDrawing()</th>
+</tr>
+
+<tr>
+<td>GuiDrawFont(ID)</td>
+<td>Setzt einen neuen Font innerhalb der aktuellen Zeichenausgabe welcher zuvor mittels GuiFontInit() initialisiert wurde.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiDrawFrame(Mode, x, y, w, h, Alpha=255)</td>
+<td>Zeichnet einen Rahmen entsprechend Mode (s. GuiFrame()) an Position x, y mit der Dimension w, h. Alpha = Intensität.</td>
+</tr>
+
+<tr>
+<td>GuiDrawText(x, y, t$, Color=#Black, Flags=0)</td>
+<td>Zeichnet einen Text mit eingestellten Font. x, y = Position, t$ = Textstring, Color.l = RGB, Alpha wird nicht unterstützt. Flags = [<span style="color:#8B0000;">#Gui_FlagCenter, #Gui_FlagRight</span>]. Es werden #LF$ und "|" als Zeilenvorschub interpretiert. Folgende {Code$,Param,...} Tags werden innerhalb eines Text unterstützt:<pre style="font-size:smaller;background-color:#FFFFC8;">
+{BD,State}     = Fettschrift State=1 an / State=0 aus
+{BX,x,y,w,h}   = Zeichnet ein Viereck an Position x,y mit der Breite w und der Höhe h
+{CB,RGB}       = Hintergrundfarbe
+{CF,RGB}       = Text-/Vordergrundfarbe
+{CH,Char}      = CHaracter darstellen, Char definiert den ASCII / Unicode des Buchstaben
+{CI,x,y,rx(,ry)} = Zeichnet einen Kreis an Position x,y mit den Radien rx,ry in der aktuellen Textfarbe
+{D0,n}..{D9,n} = Datenregister D0, D1.. D9 Wert (n) zuweisen. Datenregister sind als Parameter einsetzbar
+{DF}           = DeFault, Text wird in den Standardeinstellungen dargestellt
+{DM(,Mode)}    = Bestimmt den Modus beim Zeichnen entsprechend Purebasic 2D Drawingmode:
+                 0   = <span style="color:#8B0000;">#PB_2DDrawing_Default</span>
+                 1   = <span style="color:#8B0000;">#PB_2DDrawing_Transparent</span>
+                 2   = <span style="color:#8B0000;">#PB_2DDrawing_XOr</span>
+                 4   = <span style="color:#8B0000;">#PB_2DDrawing_Outlined</span>
+                 8   = <span style="color:#8B0000;">#PB_2DDrawing_AlphaChannel</span>
+                 16  = <span style="color:#8B0000;">#PB_2DDrawing_AlphaBlend</span>
+                 32  = <span style="color:#8B0000;">#PB_2DDrawing_AlphaClip</span>
+                 64  = <span style="color:#8B0000;">#PB_2DDrawing_Gradient</span>
+                 128 = <span style="color:#8B0000;">#PB_2DDrawing_CustomFilter</span>
+                 256 = <span style="color:#8B0000;">#PB_2DDrawing_AllChannels</span>
+{EB,Alpha,(Mode)} = Text in EmBos darstellen, Alpha=0 (aus) bis $FF, Mode=0 vertieft, Mode = 1 erhöht
+{EX}           = Textende, nachfolgende Zeichen werden nicht dargestellt
+{FI,x,y}       = Füllt die Hintergrundfarbe an x,y mit der aktuellen Textfarbe
+{FN,Font}      = DrawingFont() Font ändern mittels GuiFontSet(Font)
+{FR,Mode(,x,y)} = Text einrahmen, Mode=<span style="color:#8B0000;">#FrameMode</span> (Offsets x = -links/+rechts, y = -oben/+unten)
+{GC,RGB}       = Gadget-Farbe
+{GI,Index(,y)} = Bild aus GuiImage zeilenzentriert darstellen (y = ± vertikales Positionsoffset)
+{GP,ID}        = Gadget-Farbe aus Palette Index
+{IM,Image(,y)} = Bild zeilenzentriert darstellen (y = ± vertikales Positionsoffset)
+{IV,Mode}      = Text invers darstellen, Mode=1 an / Mode=0 aus
+{LI,x,y,w,h}   = Zeichnet eine Linie an Position x,y mit der Länge w und der Steigung ± h
+{MN,Mode(,Char)} = Menüpunkt in Mode(0-3) darstellen, Char definiert einen Buchstaben als Menüpunkt (Mode=3)
+{NL}           = NiL, keine Funktion (intern:disable)
+{PB,ID(,alpha)}= Hintergrundfarbe aus Palette-Index mit Alpha-Wert
+{PC,ID(,ID)}   = Vordergrund- (,Hintergrundfarbe) aus Palette-Index
+{PF,ID(,alpha)}= Text-/Vordergrundfarbe aus Palette-Index mit Alpha-Wert
+{SH,Alpha(,x,y)} = Schatteneffekt ein ($01..$FF) bzw. aus ($0). Schattenverschiebung erfolg optional über x,y
+{SL,Alpha(,Mode,y)} = Schattenlinie, Werte brauchen nur einmalig definiert werden (y = ± Offset)
+{ST,Alpha(,bold)} = Umrandung der folgenden Textzeichen ($1..$FF) bzw. aus ($0)
+{TH,h}         = Höhe des Gadgets unabhängig der Textzeilen festlegen
+{TS,w(,h)}     = Minimale Textbreite (,Texthöhe) welche nicht unterschritten wird
+{TW,w}         = Breite des Gadgets unabhängig der Textzeichen festlegen
+{UL,Höhe(,y)}  = Text unterstreichen, Höhe=Dicke des Unterstrich (y = ± Offset)
+{XG,XGap}      = Horizontales &#xB1; Offset zwischen Buchstaben
+{XO,x}         = Horizontale ± Textoffsets
+{XP,x}         = Text ab horizontale Pixel-Position &#xB1; x darstellen
+{YG,YGap}      = Vertikales &#xB1; Offset nach einem Zeilenvorschub ("|", #LF$)
+{YO,y}         = Vertikale ± Textoffsets
+{YP,y}         = Text ab vertikale Pixel-Position &#xB1; y dartsellen</pre>
+
+Beispiel für blaue Fettschrift:<pre style="font-size:smaller;background-color:#FFFFC8;">
+
+t$ = "Das ist ein {CF,$FF0000}blauer {BD,1}dicker{BD}{CF} Text.|" +
+     "{D0,4}{XG,D0}Textabstand{XG} mit Datenregister."
+
+StartDrawing(CanvasOutput(0))
+GuiDrawText(10, 10, t$)
+StopDrawing()
+
+</pre>
+Das ist ein <span style="color:#0000FF;">blauer <b>dicker</b></span> Text.<br>T e x t a b s t a n d mit Datenregister.<br><br></td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiDrawTextH(t$)</td>
+<td>= Tatsächliche Höhe des Text. Es werden alle Tags sowie Zeilenvorschübe berücksichtigt. Diese Anweisung kann auch außerhalb von StartDrawing() / StopDrawing() aufgerufen werden.</td>
+</tr>
+
+<tr>
+<td>GuiDrawTextW(t$)</td>
+<td>= Tatsächliche Breite des Text. Es werden alle Tags sowie Zeilenvorschübe berücksichtigt. Diese Anweisung kann auch außerhalb von StartDrawing() / StopDrawing() aufgerufen werden.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiDrawTextRaw(t$)</td>
+<td>= Text ohne Steuercodes.</td>
+</tr>
+
+<!--- POSITION --->
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th>Position</th><th>Anpassung/Korrektur für Darstellung</th>
+</tr>
+
+<tr>
+<td>GuiOffset(x=0, y=0, ix=0, iy=0)</td>
+<td>Offsets zur zusätzlichen Positionskorrektur von Text (x, y) und Bild (ix, iy) innerhalb eines Gadget. Die Einstellungen werden auf alle folgende GuiGadgets angewendet.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiPosition(x=0, y=0)</td>
+<td>Positionskorrektur für zu erstellende Gadgets. Würde an die Parameter (x = 8, y = 16) übergeben und ein Gadget an Position (20, 20) erstellt, so wird betreffendes Gadget an Position (20 + 8, 20 + 16) gezeichnet.</td>
+</tr>
+
+<tr>
+<td>GuiPosX(x=0)</td>
+<td>= aktuell horizontale Pixel-Position nach erstellten Gadget, x = Offset welches zur Position addiert wird.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiPosY(y=0)</td>
+<td>= aktuell verikale Pixel-Position nach erstellten Gadget, y = Offset welches zu Position addiert wird.</td>
+</tr>
+
+<tr>
+<td>GuiTab(w)</td>
+<td>Bestimmt die Tab-Breite in Freizeichen. Voreingestellt ist 3 (Anzahl Freizeichen für ein Tab-Zeichen).</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiH(ID)</td>
+<td>= Höhe, ID = #Gadget.</td>
+</tr>
+
+<tr>
+<td>GuiW(ID)</td>
+<td>= Breite, ID = #Gadget.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>GuiX(ID)</td>
+<td>= horizontale Position, ID = #Gadget.</td>
+</tr>
+
+<tr>
+<td>GuiY(ID)</td>
+<td>= vertikale Position, ID = #Gadget.</td>
+</tr>
+
+</table>

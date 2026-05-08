@@ -1,0 +1,75 @@
+<table style="border-collapse:collapse;width:98%;font-family:Courier New;font-size:9pt;" border="1">
+
+<tr style="background-color:#FFFFA0;color:#000000;">
+<th style="width:45%;">#IsC2D_Line3D = 1</th><th>Line3D Objekt</th>
+</tr>
+
+<tr>
+<td>IsLine3D(ID)</td><td>= Listeneintrag, #Null = Fehler</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>Line3DAngle(ID, x.f, y.f, z.f)</td><td>Blickwinkel auf das Objekt.</td>
+</tr>
+
+<tr>
+<td>Line3DColor(ID, Color.l)</td><td>Linienfarbe, derzeit kann ein Objekt nur aus 1 Farbe bestehen. ID = #PB_All ändert die Linienfarbe für alle Objekte. Die Standardfarbe ist rot.</td>
+</tr>
+
+<tr style="background-color:#f2f2f2;color:#000000;">
+<td>Line3DDepth(ID)</td><td>Pixel-Tiefe eines Objekt</td>
+</tr>
+
+<tr>
+<td>Line3DDraw(ID, x.f=0, y.f=0, zx.f=1.0, zy.f=1.0)</td><td>Zeichnet ein Objekt an Position x/y. Über die Parameter zx und zy wird eine Größenveränderung durchgeführt (1.0 &#x2259; 100%)</td>
+</tr>
+
+<tr style="background-color:#f2f2f2;color:#000000;">
+<td>Line3DFog(ID, Fog.f)</td><td>Simuliert eine Tiefenwirkung durch scheinbaren Nebeleffekt (entferntere Linien werden transparenter dargestellt). ID = #PB_All wendet den Effekt auf alle Objekte an.</td>
+</tr>
+
+<tr>
+<td>Line3DFree(ID)</td><td>Löscht ein- oder alle Line3D-Objekte (ID = #PB_All)</td>
+</tr>
+
+<tr style="background-color:#f2f2f2;color:#000000;">
+<td>Line3DHeight(ID)</td><td>Pixelhöhe eines Objekt.</td>
+</tr>
+
+<tr>
+<td>Line3DInit(ID, *Memory.RS_Line3D, Ratio.f=1.0, z.f=1.0)</td><td>Initialisiert ein Objekt mit der Kennung ID welches in *Memory vorliegt oder als @Dateiname übergeben wird (#IsC2D_File muss hierzu aktiviert sein). Über Ratio kann eine proportionale Größenangabe bestimmt werden (1.0 &#x2259; 100%). Mittels Parameter z wird die Tiefe eines Objekt variiert (1.0 &#x2259; 100%).</td>
+</tr>
+
+<tr style="background-color:#f2f2f2;color:#000000;">
+<td>Line3DRotate(ID, x.f, y.f, z.f)</td><td>Rotiert ein Objekt um die Achsen der jeweiligen Wertangaben.</td>
+</tr>
+
+<tr>
+<td>Line3DSquare(ID, Size.f, Ratio.f=0)<td>Faktor für das Eckmaß eines L3D-Objekts.</td>
+</tr>
+
+<tr style="background-color:#f2f2f2;color:#000000;">
+<td>Line3DWidth(ID)</td><td>Pixelbreite eines Objekt.</td>
+</tr>
+
+<tr style="COLOR: #000000; BACKGROUND-COLOR: #ffffa0">
+<th>#IsC2D_Line3D = 2</th><th>Erweiterung</th>
+</tr>
+
+<tr>
+<td>Line3DBuild(ID, Mode, Speed)</td><td>Die Objektdarstellung wird Linie für Linie aufgebaut (Mode = 1) oder abgebaut (Mode = -1) in der Geschwindigkeit Speed (Millisekunden) / s. Line3DIsBuild()</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>Line3DFade(ID, Speed)</td><td>Blendet ein Objekt ein oder aus in Millisekunden (Speed > 0 = einblenden, Speed < 0 ausblenden) / s. Line3DIsFade()</td>
+</tr>
+
+<tr>
+<td>Line3DIsBuild(ID)</td><td>= #Null wenn ein Objekt vollständig auf- / abgebaut wurde.</td>
+</tr>
+
+<tr style="background-color:#F2F2F2;color:#000000;">
+<td>Line3DIsFade(ID)</td><td>= #Null wenn ein Objekt vollständig ein- / ausgeblendet wurde.</td>
+</tr>
+
+</table>
