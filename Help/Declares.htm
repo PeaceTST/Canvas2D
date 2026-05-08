@@ -1,0 +1,77 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Includes</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+        background:#FFFFCF;
+}
+</style>
+
+</head>
+
+<body>
+<pre><i><font color=#00AAAA>;===================================================
+</font></i><i><font color=#00AAAA>;- *** IsC2D ON=1 / OFF=0 SWITCHES -&#62; Default all on
+</font></i><i><font color=#00AAAA>;===================================================
+</font></i><b><font color=#006666>CompilerIf  </font></b><font color=#006666>Defined</font>(IsC2D, <font color=#924B72>#PB_Module</font>) =  0
+<b><font color=#006666>   DeclareModule  </font></b>IsC2D <i><font color=#00AAAA>; Defaults -&#62; all on!</font></i>
+
+<b><font color=#006666>      XIncludeFile   </font></b><font color=#0080FF>"C2D_Types.pbi"</font> <i><font color=#00AAAA>; Constants #XMU_[Type] / #Gui_Gadget[Type] / #XUP_[Type]
+
+</font></i>      <font color=#924B72>#IsC2D_Mode</font>       =  <font color=#924B72>#PB_2DDrawing_AlphaBlend</font>   <i><font color=#00AAAA>; Default drawingmode, 0=off
+
+</font></i>      <font color=#924B72>#IsC2D_Anim</font>       =  1        <i><font color=#00AAAA>; Include animation
+</font></i>      <font color=#924B72>#IsC2D_Ball3D</font>     =  2        <i><font color=#00AAAA>; 1/2 -&#62; use Starfield, Merge, Explode commands
+</font></i>      <font color=#924B72>#IsC2D_Bitmap</font>     =  2        <i><font color=#00AAAA>; 0/1/2 -&#62; BitmapAdd(), BitmapScroll(), BitmapCopy()
+</font></i>      <font color=#924B72>#IsC2D_BitmapColor</font>=  1        <i><font color=#00AAAA>; Functions to colorize/set transparency of bitmaps
+</font></i>      <font color=#924B72>#IsC2D_Bounce</font>     =  1        <i><font color=#00AAAA>; Easy bouncing
+</font></i>      <font color=#924B72>#IsC2D_Brush</font>      =  1        <i><font color=#00AAAA>; Include fast api brush
+</font></i>      <font color=#924B72>#IsC2D_Buffer</font>     =  1        <i><font color=#00AAAA>; 1/2 -&#62; BackScroll(), Noise(), for Mirror, SinX/Y, FastClear canvasbuffer access
+</font></i>      <font color=#924B72>#IsC2D_Checker</font>    =  2        <i><font color=#00AAAA>; 1/2 -&#62; no draw of ColorB (faster)
+</font></i>      <font color=#924B72>#IsC2D_Clear</font>      =  1        <i><font color=#00AAAA>; 0/1/2 -&#62; clear canvasbuffer -&#62; 0 = off, 1 color (default), 2 = fast (black)
+</font></i>      <font color=#924B72>#IsC2D_Copper</font>     =  1        <i><font color=#00AAAA>; Include copper
+</font></i>      <font color=#924B72>#IsC2D_Delay</font>      =  1        <i><font color=#00AAAA>; Delay(#IsC2D_Delay) every call of Start(), 0 = off
+</font></i>      <font color=#924B72>#IsC2D_File</font>       =  2        <i><font color=#00AAAA>; 1/2 -&#62; need for file-access (@"Filename")
+</font></i>      <font color=#924B72>#IsC2D_FlatBar</font>    =  1        <i><font color=#00AAAA>; Include flatbar
+</font></i>      <font color=#924B72>#IsC2D_Font</font>       =  1        <i><font color=#00AAAA>; Special Font-Include (default or manually)
+</font></i>      <font color=#924B72>#IsC2D_FontColor</font>  =  1        <i><font color=#00AAAA>; Shadow, copper, color
+</font></i>      <font color=#924B72>#IsC2D_FontRaw</font>    =  1        <i><font color=#00AAAA>; s. Topaz
+</font></i>      <font color=#924B72>#IsC2D_Fps</font>        =  1        <i><font color=#00AAAA>; Calculates frames per second (Canvas2D\FPS)
+</font></i>      <font color=#924B72>#IsC2D_GdiPlus</font>    =  1        <i><font color=#00AAAA>; 1/2 -&#62; if 0 define a native image-decoder
+</font></i>      <font color=#924B72>#IsC2D_Gui</font>        =  <font color=#924B72>#PB_All</font>  <i><font color=#00AAAA>; #Gui_Gadget[Type|Type...] s. C2D_Types.pbi
+</font></i>      <font color=#924B72>#IsC2D_Guru</font>       =  1        <i><font color=#00AAAA>; Draw Guru-Alert (s. Stop())
+</font></i>      <font color=#924B72>#IsC2D_Help</font>       =  1        <i><font color=#00AAAA>; Draw MouseX/Y-Coords on canvas (s. Stop())
+</font></i>      <font color=#924B72>#IsC2D_Line3D</font>     =  2        <i><font color=#00AAAA>; 1/2 -&#62; to Build & Fade object
+</font></i>      <font color=#924B72>#IsC2D_MoveText</font>   =  1        <i><font color=#00AAAA>; 1/2 -&#62; ControlCodes {Code,Param.f} #FC_Font only
+</font></i>      <font color=#924B72>#IsC2D_Music</font>      =  <font color=#924B72>#XMU_SCA</font> <i><font color=#00AAAA>; #XMU_[Type] (s. C2D_Types.pbi)
+</font></i>      <font color=#924B72>#IsC2D_NetWork</font>    =  2        <i><font color=#00AAAA>; 1/2 -&#62; Download(), Size()
+</font></i>      <font color=#924B72>#IsC2D_PageText</font>   =  2        <i><font color=#00AAAA>; 1/2 -&#62; ControlCodes {Code,Param.f} -&#62; #FC_Font only
+</font></i>      <font color=#924B72>#IsC2D_Pixel3D</font>    =  1        <i><font color=#00AAAA>; Display/Rotate Image pixelwise (slow on large images)
+</font></i>      <font color=#924B72>#IsC2D_Poly3D</font>     =  1        <i><font color=#00AAAA>; Display/Rotate API Polygons
+</font></i>      <font color=#924B72>#IsC2D_RotoZoom</font>   =  1        <i><font color=#00AAAA>; Rotate and in/out zoom effect of an image-texture
+</font></i>      <font color=#924B72>#IsC2D_ScreenShot</font> =  1        <i><font color=#00AAAA>; Easy screenshots
+</font></i>      <font color=#924B72>#IsC2D_ScrollText</font> =  2        <i><font color=#00AAAA>; 1/2 -&#62; ControlCodes {Code,Param.f}
+</font></i>      <font color=#924B72>#IsC2D_Splatter</font>   =  1        <i><font color=#00AAAA>; Blood-Splatter / Fireworks, support Anim
+</font></i>      <font color=#924B72>#IsC2D_Stars2D</font>    =  2        <i><font color=#00AAAA>; 1/2 -&#62; sort stars by alpha
+</font></i>      <font color=#924B72>#IsC2D_Stars3D</font>    =  1        <i><font color=#00AAAA>; Include stars3d
+</font></i>      <font color=#924B72>#IsC2D_StarsR3D</font>   =  1        <i><font color=#00AAAA>; Include rotating stars3d
+</font></i>      <font color=#924B72>#IsC2D_StarsZ3D</font>   =  1        <i><font color=#00AAAA>; Include rotating zoomed stars3d
+</font></i>      <font color=#924B72>#IsC2D_SysFont</font>    =  1        <i><font color=#00AAAA>; Use SystemFont TTF,FON,OTF... from memory
+</font></i>      <font color=#924B72>#IsC2D_Text</font>       =  1        <i><font color=#00AAAA>; Static text
+</font></i>      <font color=#924B72>#IsC2D_Time</font>       =  0        <i><font color=#00AAAA>; 0/1/2 -&#62; 0=Elapsed (native,default), 1=timeGetTime, 2=GetTickCount
+</font></i>      <font color=#924B72>#IsC2D_Topaz</font>      =  1        <i><font color=#00AAAA>; 0/1 -&#62; default topaznew rawfont (452 bytes) / #IsC2D_FontRaw must be acitve
+</font></i>      <font color=#924B72>#IsC2D_Twister</font>    =  1        <i><font color=#00AAAA>; Rotating 4 colored twisted bars
+</font></i>      <font color=#924B72>#IsC2D_XUnPack</font>    =  <font color=#924B72>#PB_All</font>  <i><font color=#00AAAA>; #XUP_[Type] s. C2D_Types.pbi
+</font></i>
+<b><font color=#006666>      XIncludeFile   </font></b><font color=#0080FF>"C2D_Defaults.pbi"</font>   <i><font color=#00AAAA>; Predefined defaults
+</font></i>
+<b><font color=#006666>   EndDeclareModule
+</font></b><b><font color=#006666>CompilerEndIf</font></b></pre>
+</body>
+</html>
