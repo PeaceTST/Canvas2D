@@ -5,7 +5,7 @@
 ; Author:		Peace / Testaware
 ; Code:			Purebasic v5.40 upto v6.30+ (x86-64)
 ; Create:		29.10.2017 02:02
-; Update: 		17.04.2026 23:14
+; Update: 		10.05.2026 13:58
 ; Home:			https://testaware.wordpress.com
 ; ****************************************************
 
@@ -99,7 +99,7 @@ DeclareModule	C2D
 
 	; Globals / Declares (gdiplus in main-module)
 	CompilerIf	#IsC2D_GdiPlus			; *** GDIP ********
-		Declare	GdipCatch(Image, *Memory.Union, Length)
+		Declare	GdipCatch(Image, *Memory.Union, Length.q)
 	CompilerEndIf
 	CompilerIf	#IsC2D_Bitmap			; *** BITMAP ******
 
@@ -1320,5 +1320,5 @@ CompilerEndIf
 
 ; EOF
 ; IDE Options = PureBasic 6.30 (Windows - x86)
-; Folding = EAAAAAAAAAAAAAAAAAAAAAAAAAAg
+; Folding = EBAAAAAAAAwAAAAAAAAAAAAAAAAg
 ; CompileSourceDirectory
