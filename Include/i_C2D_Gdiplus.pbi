@@ -24,31 +24,31 @@ CompilerIf	#IsC2D_GdiPlus	=	1
 
 	Import	"gdiplus.lib"
 		CompilerIf	#PB_Compiler_Processor	=	#PB_Processor_x64
-			GdipCreateBitmapFromStream(stream , *img)					As	"GdipCreateBitmapFromStream"
-			GdipCreateFromHDC(*hdc, *gfx)									As	"GdipCreateFromHDC"
-			GdipDeleteGraphics(*gfx)										As	"GdipDeleteGraphics"
-			GdipDisposeImage(*img)											As	"GdipDisposeImage"
-			GdipDrawImageRectI(*gfx, *img, x, y, Width, Height)	As	"GdipDrawImageRectI"
-			GdipGetImageHeight(*img, *Height)							As	"GdipGetImageHeight"
-			GdipGetImageWidth(*img, *Width)								As	"GdipGetImageWidth"
-			GdiplusShutdown(*token)											As	"GdiplusShutdown"
-			GdiplusStartup(*token, *input, Mode)						As	"GdiplusStartup"
+			GdipCreateBitmapFromStream(stream , *bitmap)	As	"GdipCreateBitmapFromStream"
+			GdipCreateFromHDC(*hdc, *graphics)				As	"GdipCreateFromHDC"
+			GdipDeleteGraphics(*graphics)						As	"GdipDeleteGraphics"
+			GdipDisposeImage(*bitmap)							As	"GdipDisposeImage"
+			GdipDrawImageRectI(*graphics, *bitmap, x, y, Width, Height)	As	"GdipDrawImageRectI"
+			GdipGetImageHeight(*bitmap, *Height)			As	"GdipGetImageHeight"
+			GdipGetImageWidth(*bitmap, *Width)				As	"GdipGetImageWidth"
+			GdiplusShutdown(*token)								As	"GdiplusShutdown"
+			GdiplusStartup(*token, *input, Mode)			As	"GdiplusStartup"
 		CompilerElse
-			GdipCreateBitmapFromStream(stream , *img)					As	"_GdipCreateBitmapFromStream@8"
-			GdipCreateFromHDC(*hdc, *gfx)									As	"_GdipCreateFromHDC@8"
-			GdipDeleteGraphics(*gfx)										As	"_GdipDeleteGraphics@4"
-			GdipDisposeImage(*img)											As	"_GdipDisposeImage@4"
-			GdipDrawImageRectI(*gfx, *img, x, y, Width, Height)	As	"_GdipDrawImageRectI@24"
-			GdipGetImageHeight(*img, *Height)							As	"_GdipGetImageHeight@8"
-			GdipGetImageWidth(*img, *Width)								As	"_GdipGetImageWidth@8"
-			GdiplusShutdown(*token)											As	"_GdiplusShutdown@4"
-			GdiplusStartup(*token, *input, Mode)						As	"_GdiplusStartup@12"
+			GdipCreateBitmapFromStream(stream , *bitmap)	As	"_GdipCreateBitmapFromStream@8"
+			GdipCreateFromHDC(*hdc, *graphics)				As	"_GdipCreateFromHDC@8"
+			GdipDeleteGraphics(*graphics)						As	"_GdipDeleteGraphics@4"
+			GdipDisposeImage(*bitmap)							As	"_GdipDisposeImage@4"
+			GdipDrawImageRectI(*graphics, *bitmap, x, y, Width, Height)	As	"_GdipDrawImageRectI@24"
+			GdipGetImageHeight(*bitmap, *Height)			As	"_GdipGetImageHeight@8"
+			GdipGetImageWidth(*bitmap, *Width)				As	"_GdipGetImageWidth@8"
+			GdiplusShutdown(*token)								As	"_GdiplusShutdown@4"
+			GdiplusStartup(*token, *input, Mode)			As	"_GdiplusStartup@12"
 		CompilerEndIf
 	EndImport
 
 	Procedure	GdipCatch(Image, *Memory.Union, Length.q)
 
-		Protected	*token, *img, *gfx, *hDC, ID, w, h
+		Protected	*token, *bitmap, *graphics, *hDC, ID, w, h
 		Protected	input.GdiplusStartupInput, Stream.StreamObject
 
 		If	Length	>	*Memory	:	Length	-	*Memory	:	EndIf
@@ -68,44 +68,42 @@ CompilerIf	#IsC2D_GdiPlus	=	1
 		MoveMemory(*Memory, Stream\bits, Length)
 
 		If CreateStreamOnHGlobal_(Stream\bits, 0, @Stream\stream)	=	#S_OK
-
-			GdipCreateBitmapFromStream(Stream\stream , @*img)
-
-			If *img
-
-				GdipGetImageWidth(*img,  @w)	; ImageWidth
-				GdipGetImageHeight(*img, @h)	; ImageHeight
-
+			If GdipCreateBitmapFromStream(Stream\stream , @*bitmap)	=	#Null
+				
+				GdipGetImageWidth(*bitmap,  @w)	; ImageWidth
+				GdipGetImageHeight(*bitmap, @h)	; ImageHeight
+				
 				CompilerIf	#PB_Compiler_Version	>=	630
 					ID	=	CreateImage(Image, w, h, 32, #PB_Image_TransparentBlack)
 				CompilerElse
 					ID	=	CreateImage(Image, w, h, 32, #PB_Image_Transparent)
 				CompilerEndIf
-
+				
 				If	ID
-
-					If	Image	<>	#PB_Any	:	ID	=	Image	:	EndIf
-
+					
+					If	Image	<>	#PB_Any	:	ID	=	Image	:	EndIf	; ID = hImage
+					
 					*hDC	=	StartDrawing(ImageOutput(ID))
-					GdipCreateFromHDC(*hDC, @*gfx)
-					GdipDrawImageRectI(*gfx, *img, 0, 0, OutputWidth(), OutputHeight())
+					If	GdipCreateFromHDC(*hDC, @*graphics)	=	#Null
+						GdipDrawImageRectI(*graphics, *bitmap, 0, 0, OutputWidth(), OutputHeight())
+						GdipDeleteGraphics(*graphics)
+					EndIf
 					StopDrawing()
-
-					GdipDeleteGraphics(*gfx)
-
+					
 				EndIf
-
-				GdipDisposeImage(*img)
-
+				
+				GdipDisposeImage(*bitmap)
+				
 			EndIf
-
+			
+			Stream\stream\Release()
+			
 		Else
-
+			
 			ID	=	#Null	; Error
-
+			
 		EndIf
 
-		Stream\stream\Release()
 		GlobalUnlock_(Stream\bits)
 		GlobalFree_(Stream\block)
 
